@@ -51,7 +51,7 @@ def tanh(z):
     :param z: input
     :return: output
     """
-    return (np.exp(z) - np.exp(-z)) / (np.exp(z) + np.exp(-z))
+    return np.tanh(z)
 
 
 def tanh_prime(z):

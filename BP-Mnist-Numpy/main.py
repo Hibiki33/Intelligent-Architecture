@@ -42,7 +42,7 @@ def train(net, features, labels):
     :return: None
     """
     # epochs is the number of times the training data set is used for training
-    epochs = 2
+    epochs = 10
 
     for e in range(epochs):
         # go through all records in the training data set
@@ -81,14 +81,19 @@ if __name__ == '__main__':
 
     # number of input, hidden and output nodes
     input_nodes = 784
-    hidden_nodes = 200
+    hidden_nodes1 = 100
+    hidden_nodes2 = 50
+    hidden_nodes3 = 20
     output_nodes = 10
 
     # learning rate
-    learning_rate = 0.1
+    learning_rate = 0.02
+
+    # set seed for random number generator
+    np.random.seed(114)
 
     # create instance of neural network
-    model = NeuralNetwork(input_nodes, hidden_nodes, output_nodes, learning_rate)
+    model = NeuralNetwork(input_nodes, hidden_nodes1, hidden_nodes2, hidden_nodes3, output_nodes, learning_rate, "sigmoid")
 
     # record start training time
     start_training_time = time.time()
@@ -102,8 +107,12 @@ if __name__ == '__main__':
     evaluate(model, test_images, test_labels)
 
     # Save weight parameters
-    np.save('./weights/who.npy', model.who)
-    np.save('./weights/wih.npy', model.wih)
+    # np.save('./weights/who.npy', model.who)
+    # np.save('./weights/wih.npy', model.wih)
+    np.save('./weights/weight_in_h1.npy', model.weight_in_h1)
+    np.save('./weights/weight_h1_h2.npy', model.weight_h1_h2)
+    np.save('./weights/weight_h2_h3.npy', model.weight_h2_h3)
+    np.save('./weights/weight_h3_ou.npy', model.weight_h3_ou)
 
     print("Done.")
 
