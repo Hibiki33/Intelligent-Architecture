@@ -1,0 +1,21 @@
+.
+│  eval.py
+│  model.py
+│  train.py
+│
+├─models
+│      mnist_0.989.pkl
+│      mnist_0.990.pkl
+│      mnist_0.991.pkl
+│
+├─test
+│  └─MNIST
+│      └─raw
+│              t10k-images-idx3-ubyte
+│              t10k-labels-idx1-ubyte
+│
+└─train
+    └─MNIST
+        └─raw
+                train-images-idx3-ubyte
+                train-labels-idx1-ubyte
