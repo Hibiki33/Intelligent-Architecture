@@ -1,0 +1,1 @@
+-wto "c5a28d8a5ecf455a95c88ac34f77405c" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "Multiply_8x8_tb_behav" "xil_defaultlib.Multiply_8x8_tb" "xil_defaultlib.glbl" -log "elaborate.log" 

@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/workspace/_Intelligent_Computing_Architectures2/lab3/rtl/MAC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MAC
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/workspace/_Intelligent_Computing_Architectures2/lab3/rtl/Multiply_8x8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Multiply_8x8
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/workspace/_Intelligent_Computing_Architectures2/lab3/tb/Multiply_8x8_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Multiply_8x8_tb
