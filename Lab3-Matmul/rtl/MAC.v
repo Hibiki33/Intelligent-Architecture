@@ -100,8 +100,8 @@ always @(posedge clk or posedge rst) begin
     end
 end
 wire signed [15:0] sf_data;
-// assign sf_data = $signed({8'b0,f_data});
-assign sf_data = $signed({{8{f_data[7]}}, f_data});
+assign sf_data = $signed({8'b0,f_data});
+// assign sf_data = $signed({{8{f_data[7]}}, f_data});
 // 本级计算
 reg signed [31:0] data_reg;
 always @(posedge clk or posedge rst) begin
