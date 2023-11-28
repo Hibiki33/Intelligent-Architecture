@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Nov  3 14:53:31 2023
+# Process ID: 12084
+# Current directory: D:/wjj/Intelligent-Architecture/Lab3/proj/matmul.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/wjj/Intelligent-Architecture/Lab3/proj/matmul.sim/sim_1/behav/xsim/xsim.dir/Multiply_8x8_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/wjj/Intelligent-Architecture/Lab3/proj/matmul.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/wjj/Intelligent-Architecture/Lab3/proj/matmul.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/wjj/Intelligent-Architecture/Lab3/proj/matmul.sim/sim_1/behav/xsim/xsim.dir/Multiply_8x8_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 110.359 ; gain = 17.906
+INFO: [Common 17-206] Exiting Webtalk at Fri Nov  3 14:53:36 2023...
