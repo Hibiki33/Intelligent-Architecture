@@ -1,8 +1,10 @@
+# -*-coding: utf-8-*-
 
 from bram import BRAM, BramConfig
 from enum import Enum
 import logging
 import numpy as np
+
 
 class Logger(object):
     '''输出日志模块，用于控制台控制日志输出等级'''
@@ -38,6 +40,7 @@ class Logger(object):
     def get_logger() -> logging:
         return Logger.logger
 
+
 def main(logger):
 
     class FlagAddr(Enum):
@@ -70,7 +73,7 @@ def main(logger):
         
         def wait_flag(self):
             value = -1
-            while( value != 1):
+            while value != 1:
                 value = self.read_flag()
 
     flag = FLAG()
@@ -132,7 +135,6 @@ def main(logger):
         bram.write( output , block_name = "output" )
 
         flag.clean_flag()
-
 
 
 if __name__ == "__main__":

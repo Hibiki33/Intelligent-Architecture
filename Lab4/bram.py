@@ -1,7 +1,9 @@
 # -*-coding: utf-8-*-
+
 import numpy as np
 import mmap
 import os, sys
+
 
 class BramConfig(object):
     '''BRAM信息配置'''
