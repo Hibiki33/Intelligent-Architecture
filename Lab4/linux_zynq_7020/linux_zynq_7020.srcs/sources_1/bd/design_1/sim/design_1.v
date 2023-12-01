@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-//Date        : Tue Nov 28 23:49:23 2023
+//Date        : Fri Dec  1 19:28:28 2023
 //Host        : jiajun running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=11,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_bram_cntlr_cnt=4,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=11,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR_addr,
     DDR_ba,
@@ -61,13 +61,6 @@ module design_1
   wire axi_bram_ctrl_0_BRAM_PORTA_EN;
   wire axi_bram_ctrl_0_BRAM_PORTA_RST;
   wire [3:0]axi_bram_ctrl_0_BRAM_PORTA_WE;
-  wire [14:0]axi_bram_ctrl_0_BRAM_PORTB_ADDR;
-  wire axi_bram_ctrl_0_BRAM_PORTB_CLK;
-  wire [31:0]axi_bram_ctrl_0_BRAM_PORTB_DIN;
-  wire [31:0]axi_bram_ctrl_0_BRAM_PORTB_DOUT;
-  wire axi_bram_ctrl_0_BRAM_PORTB_EN;
-  wire axi_bram_ctrl_0_BRAM_PORTB_RST;
-  wire [3:0]axi_bram_ctrl_0_BRAM_PORTB_WE;
   wire [16:0]axi_bram_ctrl_1_BRAM_PORTA_ADDR;
   wire axi_bram_ctrl_1_BRAM_PORTA_CLK;
   wire [31:0]axi_bram_ctrl_1_BRAM_PORTA_DIN;
@@ -75,13 +68,6 @@ module design_1
   wire axi_bram_ctrl_1_BRAM_PORTA_EN;
   wire axi_bram_ctrl_1_BRAM_PORTA_RST;
   wire [3:0]axi_bram_ctrl_1_BRAM_PORTA_WE;
-  wire [16:0]axi_bram_ctrl_1_BRAM_PORTB_ADDR;
-  wire axi_bram_ctrl_1_BRAM_PORTB_CLK;
-  wire [31:0]axi_bram_ctrl_1_BRAM_PORTB_DIN;
-  wire [31:0]axi_bram_ctrl_1_BRAM_PORTB_DOUT;
-  wire axi_bram_ctrl_1_BRAM_PORTB_EN;
-  wire axi_bram_ctrl_1_BRAM_PORTB_RST;
-  wire [3:0]axi_bram_ctrl_1_BRAM_PORTB_WE;
   wire [14:0]axi_bram_ctrl_2_BRAM_PORTA_ADDR;
   wire axi_bram_ctrl_2_BRAM_PORTA_CLK;
   wire [31:0]axi_bram_ctrl_2_BRAM_PORTA_DIN;
@@ -89,13 +75,6 @@ module design_1
   wire axi_bram_ctrl_2_BRAM_PORTA_EN;
   wire axi_bram_ctrl_2_BRAM_PORTA_RST;
   wire [3:0]axi_bram_ctrl_2_BRAM_PORTA_WE;
-  wire [14:0]axi_bram_ctrl_2_BRAM_PORTB_ADDR;
-  wire axi_bram_ctrl_2_BRAM_PORTB_CLK;
-  wire [31:0]axi_bram_ctrl_2_BRAM_PORTB_DIN;
-  wire [31:0]axi_bram_ctrl_2_BRAM_PORTB_DOUT;
-  wire axi_bram_ctrl_2_BRAM_PORTB_EN;
-  wire axi_bram_ctrl_2_BRAM_PORTB_RST;
-  wire [3:0]axi_bram_ctrl_2_BRAM_PORTB_WE;
   wire [11:0]axi_bram_ctrl_3_BRAM_PORTA_ADDR;
   wire axi_bram_ctrl_3_BRAM_PORTA_CLK;
   wire [31:0]axi_bram_ctrl_3_BRAM_PORTA_DIN;
@@ -103,13 +82,6 @@ module design_1
   wire axi_bram_ctrl_3_BRAM_PORTA_EN;
   wire axi_bram_ctrl_3_BRAM_PORTA_RST;
   wire [3:0]axi_bram_ctrl_3_BRAM_PORTA_WE;
-  wire [11:0]axi_bram_ctrl_3_BRAM_PORTB_ADDR;
-  wire axi_bram_ctrl_3_BRAM_PORTB_CLK;
-  wire [31:0]axi_bram_ctrl_3_BRAM_PORTB_DIN;
-  wire [31:0]axi_bram_ctrl_3_BRAM_PORTB_DOUT;
-  wire axi_bram_ctrl_3_BRAM_PORTB_EN;
-  wire axi_bram_ctrl_3_BRAM_PORTB_RST;
-  wire [3:0]axi_bram_ctrl_3_BRAM_PORTB_WE;
   wire [14:0]axi_smc_M00_AXI_ARADDR;
   wire [1:0]axi_smc_M00_AXI_ARBURST;
   wire [3:0]axi_smc_M00_AXI_ARCACHE;
@@ -301,19 +273,12 @@ module design_1
   (* KEEP_HIERARCHY = "yes" *) 
   design_1_axi_bram_ctrl_0_0 axi_bram_ctrl_0
        (.bram_addr_a(axi_bram_ctrl_0_BRAM_PORTA_ADDR),
-        .bram_addr_b(axi_bram_ctrl_0_BRAM_PORTB_ADDR),
         .bram_clk_a(axi_bram_ctrl_0_BRAM_PORTA_CLK),
-        .bram_clk_b(axi_bram_ctrl_0_BRAM_PORTB_CLK),
         .bram_en_a(axi_bram_ctrl_0_BRAM_PORTA_EN),
-        .bram_en_b(axi_bram_ctrl_0_BRAM_PORTB_EN),
         .bram_rddata_a(axi_bram_ctrl_0_BRAM_PORTA_DOUT),
-        .bram_rddata_b(axi_bram_ctrl_0_BRAM_PORTB_DOUT),
         .bram_rst_a(axi_bram_ctrl_0_BRAM_PORTA_RST),
-        .bram_rst_b(axi_bram_ctrl_0_BRAM_PORTB_RST),
         .bram_we_a(axi_bram_ctrl_0_BRAM_PORTA_WE),
-        .bram_we_b(axi_bram_ctrl_0_BRAM_PORTB_WE),
         .bram_wrdata_a(axi_bram_ctrl_0_BRAM_PORTA_DIN),
-        .bram_wrdata_b(axi_bram_ctrl_0_BRAM_PORTB_DIN),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_smc_M00_AXI_ARADDR),
         .s_axi_arburst(axi_smc_M00_AXI_ARBURST),
@@ -351,19 +316,12 @@ module design_1
   (* KEEP_HIERARCHY = "yes" *) 
   design_1_axi_bram_ctrl_0_1 axi_bram_ctrl_1
        (.bram_addr_a(axi_bram_ctrl_1_BRAM_PORTA_ADDR),
-        .bram_addr_b(axi_bram_ctrl_1_BRAM_PORTB_ADDR),
         .bram_clk_a(axi_bram_ctrl_1_BRAM_PORTA_CLK),
-        .bram_clk_b(axi_bram_ctrl_1_BRAM_PORTB_CLK),
         .bram_en_a(axi_bram_ctrl_1_BRAM_PORTA_EN),
-        .bram_en_b(axi_bram_ctrl_1_BRAM_PORTB_EN),
         .bram_rddata_a(axi_bram_ctrl_1_BRAM_PORTA_DOUT),
-        .bram_rddata_b(axi_bram_ctrl_1_BRAM_PORTB_DOUT),
         .bram_rst_a(axi_bram_ctrl_1_BRAM_PORTA_RST),
-        .bram_rst_b(axi_bram_ctrl_1_BRAM_PORTB_RST),
         .bram_we_a(axi_bram_ctrl_1_BRAM_PORTA_WE),
-        .bram_we_b(axi_bram_ctrl_1_BRAM_PORTB_WE),
         .bram_wrdata_a(axi_bram_ctrl_1_BRAM_PORTA_DIN),
-        .bram_wrdata_b(axi_bram_ctrl_1_BRAM_PORTB_DIN),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_smc_M01_AXI_ARADDR),
         .s_axi_arburst(axi_smc_M01_AXI_ARBURST),
@@ -401,19 +359,12 @@ module design_1
   (* KEEP_HIERARCHY = "yes" *) 
   design_1_axi_bram_ctrl_0_2 axi_bram_ctrl_2
        (.bram_addr_a(axi_bram_ctrl_2_BRAM_PORTA_ADDR),
-        .bram_addr_b(axi_bram_ctrl_2_BRAM_PORTB_ADDR),
         .bram_clk_a(axi_bram_ctrl_2_BRAM_PORTA_CLK),
-        .bram_clk_b(axi_bram_ctrl_2_BRAM_PORTB_CLK),
         .bram_en_a(axi_bram_ctrl_2_BRAM_PORTA_EN),
-        .bram_en_b(axi_bram_ctrl_2_BRAM_PORTB_EN),
         .bram_rddata_a(axi_bram_ctrl_2_BRAM_PORTA_DOUT),
-        .bram_rddata_b(axi_bram_ctrl_2_BRAM_PORTB_DOUT),
         .bram_rst_a(axi_bram_ctrl_2_BRAM_PORTA_RST),
-        .bram_rst_b(axi_bram_ctrl_2_BRAM_PORTB_RST),
         .bram_we_a(axi_bram_ctrl_2_BRAM_PORTA_WE),
-        .bram_we_b(axi_bram_ctrl_2_BRAM_PORTB_WE),
         .bram_wrdata_a(axi_bram_ctrl_2_BRAM_PORTA_DIN),
-        .bram_wrdata_b(axi_bram_ctrl_2_BRAM_PORTB_DIN),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_smc_M02_AXI_ARADDR),
         .s_axi_arburst(axi_smc_M02_AXI_ARBURST),
@@ -447,21 +398,16 @@ module design_1
         .s_axi_wready(axi_smc_M02_AXI_WREADY),
         .s_axi_wstrb(axi_smc_M02_AXI_WSTRB),
         .s_axi_wvalid(axi_smc_M02_AXI_WVALID));
+  (* BMM_INFO_ADDRESS_SPACE = "byte  0x40060000 32 > design_1 blk_mem_gen_3" *) 
+  (* KEEP_HIERARCHY = "yes" *) 
   design_1_axi_bram_ctrl_0_3 axi_bram_ctrl_3
        (.bram_addr_a(axi_bram_ctrl_3_BRAM_PORTA_ADDR),
-        .bram_addr_b(axi_bram_ctrl_3_BRAM_PORTB_ADDR),
         .bram_clk_a(axi_bram_ctrl_3_BRAM_PORTA_CLK),
-        .bram_clk_b(axi_bram_ctrl_3_BRAM_PORTB_CLK),
         .bram_en_a(axi_bram_ctrl_3_BRAM_PORTA_EN),
-        .bram_en_b(axi_bram_ctrl_3_BRAM_PORTB_EN),
         .bram_rddata_a(axi_bram_ctrl_3_BRAM_PORTA_DOUT),
-        .bram_rddata_b(axi_bram_ctrl_3_BRAM_PORTB_DOUT),
         .bram_rst_a(axi_bram_ctrl_3_BRAM_PORTA_RST),
-        .bram_rst_b(axi_bram_ctrl_3_BRAM_PORTB_RST),
         .bram_we_a(axi_bram_ctrl_3_BRAM_PORTA_WE),
-        .bram_we_b(axi_bram_ctrl_3_BRAM_PORTB_WE),
         .bram_wrdata_a(axi_bram_ctrl_3_BRAM_PORTA_DIN),
-        .bram_wrdata_b(axi_bram_ctrl_3_BRAM_PORTB_DIN),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_smc_M03_AXI_ARADDR),
         .s_axi_arburst(axi_smc_M03_AXI_ARBURST),
@@ -660,67 +606,63 @@ module design_1
         .S00_AXI_wvalid(processing_system7_0_M_AXI_GP0_WVALID),
         .aclk(processing_system7_0_FCLK_CLK0),
         .aresetn(rst_ps7_0_50M_peripheral_aresetn));
-  design_1_blk_mem_gen_0_1 blk_mem_gen_0
+  design_1_blk_mem_gen_0_0 blk_mem_gen_0
        (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_0_BRAM_PORTA_ADDR}),
-        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_0_BRAM_PORTB_ADDR}),
+        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .clka(axi_bram_ctrl_0_BRAM_PORTA_CLK),
-        .clkb(axi_bram_ctrl_0_BRAM_PORTB_CLK),
+        .clkb(1'b0),
         .dina(axi_bram_ctrl_0_BRAM_PORTA_DIN),
-        .dinb(axi_bram_ctrl_0_BRAM_PORTB_DIN),
+        .dinb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0}),
         .douta(axi_bram_ctrl_0_BRAM_PORTA_DOUT),
-        .doutb(axi_bram_ctrl_0_BRAM_PORTB_DOUT),
         .ena(axi_bram_ctrl_0_BRAM_PORTA_EN),
-        .enb(axi_bram_ctrl_0_BRAM_PORTB_EN),
+        .enb(1'b0),
         .rsta(axi_bram_ctrl_0_BRAM_PORTA_RST),
-        .rstb(axi_bram_ctrl_0_BRAM_PORTB_RST),
+        .rstb(1'b0),
         .wea(axi_bram_ctrl_0_BRAM_PORTA_WE),
-        .web(axi_bram_ctrl_0_BRAM_PORTB_WE));
-  design_1_blk_mem_gen_0_2 blk_mem_gen_1
-       (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_3_BRAM_PORTA_ADDR}),
-        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_1_BRAM_PORTB_ADDR}),
-        .clka(axi_bram_ctrl_3_BRAM_PORTA_CLK),
-        .clkb(axi_bram_ctrl_1_BRAM_PORTB_CLK),
-        .dina(axi_bram_ctrl_3_BRAM_PORTA_DIN),
-        .dinb(axi_bram_ctrl_1_BRAM_PORTB_DIN),
-        .douta(axi_bram_ctrl_3_BRAM_PORTA_DOUT),
-        .doutb(axi_bram_ctrl_1_BRAM_PORTB_DOUT),
-        .ena(axi_bram_ctrl_3_BRAM_PORTA_EN),
-        .enb(axi_bram_ctrl_1_BRAM_PORTB_EN),
-        .rsta(axi_bram_ctrl_3_BRAM_PORTA_RST),
-        .rstb(axi_bram_ctrl_1_BRAM_PORTB_RST),
-        .wea(axi_bram_ctrl_3_BRAM_PORTA_WE),
-        .web(axi_bram_ctrl_1_BRAM_PORTB_WE));
-  design_1_blk_mem_gen_0_3 blk_mem_gen_2
-       (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_2_BRAM_PORTA_ADDR}),
-        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_2_BRAM_PORTB_ADDR}),
-        .clka(axi_bram_ctrl_2_BRAM_PORTA_CLK),
-        .clkb(axi_bram_ctrl_2_BRAM_PORTB_CLK),
-        .dina(axi_bram_ctrl_2_BRAM_PORTA_DIN),
-        .dinb(axi_bram_ctrl_2_BRAM_PORTB_DIN),
-        .douta(axi_bram_ctrl_2_BRAM_PORTA_DOUT),
-        .doutb(axi_bram_ctrl_2_BRAM_PORTB_DOUT),
-        .ena(axi_bram_ctrl_2_BRAM_PORTA_EN),
-        .enb(axi_bram_ctrl_2_BRAM_PORTB_EN),
-        .rsta(axi_bram_ctrl_2_BRAM_PORTA_RST),
-        .rstb(axi_bram_ctrl_2_BRAM_PORTB_RST),
-        .wea(axi_bram_ctrl_2_BRAM_PORTA_WE),
-        .web(axi_bram_ctrl_2_BRAM_PORTB_WE));
-  design_1_blk_mem_gen_0_4 blk_mem_gen_3
+        .web({1'b0,1'b0,1'b0,1'b0}));
+  design_1_blk_mem_gen_0_1 blk_mem_gen_1
        (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_1_BRAM_PORTA_ADDR}),
-        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_3_BRAM_PORTB_ADDR}),
+        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .clka(axi_bram_ctrl_1_BRAM_PORTA_CLK),
-        .clkb(axi_bram_ctrl_3_BRAM_PORTB_CLK),
+        .clkb(1'b0),
         .dina(axi_bram_ctrl_1_BRAM_PORTA_DIN),
-        .dinb(axi_bram_ctrl_3_BRAM_PORTB_DIN),
+        .dinb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0}),
         .douta(axi_bram_ctrl_1_BRAM_PORTA_DOUT),
-        .doutb(axi_bram_ctrl_3_BRAM_PORTB_DOUT),
         .ena(axi_bram_ctrl_1_BRAM_PORTA_EN),
-        .enb(axi_bram_ctrl_3_BRAM_PORTB_EN),
+        .enb(1'b0),
         .rsta(axi_bram_ctrl_1_BRAM_PORTA_RST),
-        .rstb(axi_bram_ctrl_3_BRAM_PORTB_RST),
+        .rstb(1'b0),
         .wea(axi_bram_ctrl_1_BRAM_PORTA_WE),
-        .web(axi_bram_ctrl_3_BRAM_PORTB_WE));
-  (* BMM_INFO_PROCESSOR = "arm > design_1 axi_bram_ctrl_0 design_1 axi_bram_ctrl_1 design_1 axi_bram_ctrl_2" *) 
+        .web({1'b0,1'b0,1'b0,1'b0}));
+  design_1_blk_mem_gen_1_0 blk_mem_gen_2
+       (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_2_BRAM_PORTA_ADDR}),
+        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .clka(axi_bram_ctrl_2_BRAM_PORTA_CLK),
+        .clkb(1'b0),
+        .dina(axi_bram_ctrl_2_BRAM_PORTA_DIN),
+        .dinb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0}),
+        .douta(axi_bram_ctrl_2_BRAM_PORTA_DOUT),
+        .ena(axi_bram_ctrl_2_BRAM_PORTA_EN),
+        .enb(1'b0),
+        .rsta(axi_bram_ctrl_2_BRAM_PORTA_RST),
+        .rstb(1'b0),
+        .wea(axi_bram_ctrl_2_BRAM_PORTA_WE),
+        .web({1'b0,1'b0,1'b0,1'b0}));
+  design_1_blk_mem_gen_1_1 blk_mem_gen_3
+       (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_3_BRAM_PORTA_ADDR}),
+        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .clka(axi_bram_ctrl_3_BRAM_PORTA_CLK),
+        .clkb(1'b0),
+        .dina(axi_bram_ctrl_3_BRAM_PORTA_DIN),
+        .dinb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0}),
+        .douta(axi_bram_ctrl_3_BRAM_PORTA_DOUT),
+        .ena(axi_bram_ctrl_3_BRAM_PORTA_EN),
+        .enb(1'b0),
+        .rsta(axi_bram_ctrl_3_BRAM_PORTA_RST),
+        .rstb(1'b0),
+        .wea(axi_bram_ctrl_3_BRAM_PORTA_WE),
+        .web({1'b0,1'b0,1'b0,1'b0}));
+  (* BMM_INFO_PROCESSOR = "arm > design_1 axi_bram_ctrl_0 design_1 axi_bram_ctrl_1 design_1 axi_bram_ctrl_2 design_1 axi_bram_ctrl_3" *) 
   (* KEEP_HIERARCHY = "yes" *) 
   design_1_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),

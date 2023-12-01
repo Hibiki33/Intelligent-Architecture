@@ -806,7 +806,7 @@
         },
         "hdl_attributes": {
           "BMM_INFO_PROCESSOR": {
-            "value": "arm > design_1 axi_bram_ctrl_0 design_1 axi_bram_ctrl_1 design_1 axi_bram_ctrl_2",
+            "value": "arm > design_1 axi_bram_ctrl_0 design_1 axi_bram_ctrl_1 design_1 axi_bram_ctrl_2 design_1 axi_bram_ctrl_3",
             "value_src": "default"
           },
           "KEEP_HIERARCHY": {
@@ -817,7 +817,7 @@
       },
       "blk_mem_gen_0": {
         "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "design_1_blk_mem_gen_0_1",
+        "xci_name": "design_1_blk_mem_gen_0_0",
         "parameters": {
           "Enable_B": {
             "value": "Use_ENB_Pin"
@@ -842,6 +842,11 @@
       "axi_bram_ctrl_0": {
         "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
         "xci_name": "design_1_axi_bram_ctrl_0_0",
+        "parameters": {
+          "SINGLE_PORT_BRAM": {
+            "value": "1"
+          }
+        },
         "hdl_attributes": {
           "BMM_INFO_ADDRESS_SPACE": {
             "value": "byte  0x40000000 32 > design_1 blk_mem_gen_0",
@@ -856,6 +861,11 @@
       "axi_bram_ctrl_1": {
         "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
         "xci_name": "design_1_axi_bram_ctrl_0_1",
+        "parameters": {
+          "SINGLE_PORT_BRAM": {
+            "value": "1"
+          }
+        },
         "hdl_attributes": {
           "BMM_INFO_ADDRESS_SPACE": {
             "value": "byte  0x40020000 32 > design_1 blk_mem_gen_1",
@@ -870,6 +880,11 @@
       "axi_bram_ctrl_2": {
         "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
         "xci_name": "design_1_axi_bram_ctrl_0_2",
+        "parameters": {
+          "SINGLE_PORT_BRAM": {
+            "value": "1"
+          }
+        },
         "hdl_attributes": {
           "BMM_INFO_ADDRESS_SPACE": {
             "value": "byte  0x40040000 32 > design_1 blk_mem_gen_2",
@@ -883,11 +898,26 @@
       },
       "axi_bram_ctrl_3": {
         "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
-        "xci_name": "design_1_axi_bram_ctrl_0_3"
+        "xci_name": "design_1_axi_bram_ctrl_0_3",
+        "parameters": {
+          "SINGLE_PORT_BRAM": {
+            "value": "1"
+          }
+        },
+        "hdl_attributes": {
+          "BMM_INFO_ADDRESS_SPACE": {
+            "value": "byte  0x40060000 32 > design_1 blk_mem_gen_3",
+            "value_src": "default"
+          },
+          "KEEP_HIERARCHY": {
+            "value": "yes",
+            "value_src": "default"
+          }
+        }
       },
       "blk_mem_gen_1": {
         "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "design_1_blk_mem_gen_0_2",
+        "xci_name": "design_1_blk_mem_gen_0_1",
         "parameters": {
           "Enable_B": {
             "value": "Use_ENB_Pin"
@@ -911,7 +941,7 @@
       },
       "blk_mem_gen_2": {
         "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "design_1_blk_mem_gen_0_3",
+        "xci_name": "design_1_blk_mem_gen_1_0",
         "parameters": {
           "Enable_B": {
             "value": "Use_ENB_Pin"
@@ -935,7 +965,7 @@
       },
       "blk_mem_gen_3": {
         "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "design_1_blk_mem_gen_0_4",
+        "xci_name": "design_1_blk_mem_gen_1_1",
         "parameters": {
           "Enable_B": {
             "value": "Use_ENB_Pin"
@@ -1091,58 +1121,16 @@
       }
     },
     "interface_nets": {
-      "axi_smc_M03_AXI": {
-        "interface_ports": [
-          "axi_smc/M03_AXI",
-          "axi_bram_ctrl_3/S_AXI"
-        ]
-      },
       "axi_bram_ctrl_1_BRAM_PORTA": {
         "interface_ports": [
-          "axi_bram_ctrl_1/BRAM_PORTA",
-          "blk_mem_gen_3/BRAM_PORTA"
-        ]
-      },
-      "axi_bram_ctrl_3_BRAM_PORTA": {
-        "interface_ports": [
-          "axi_bram_ctrl_3/BRAM_PORTA",
-          "blk_mem_gen_1/BRAM_PORTA"
+          "blk_mem_gen_1/BRAM_PORTA",
+          "axi_bram_ctrl_1/BRAM_PORTA"
         ]
       },
       "axi_bram_ctrl_2_BRAM_PORTA": {
         "interface_ports": [
-          "axi_bram_ctrl_2/BRAM_PORTA",
-          "blk_mem_gen_2/BRAM_PORTA"
-        ]
-      },
-      "axi_bram_ctrl_2_BRAM_PORTB": {
-        "interface_ports": [
-          "blk_mem_gen_2/BRAM_PORTB",
-          "axi_bram_ctrl_2/BRAM_PORTB"
-        ]
-      },
-      "axi_smc_M02_AXI": {
-        "interface_ports": [
-          "axi_smc/M02_AXI",
-          "axi_bram_ctrl_2/S_AXI"
-        ]
-      },
-      "axi_bram_ctrl_3_BRAM_PORTB": {
-        "interface_ports": [
-          "blk_mem_gen_3/BRAM_PORTB",
-          "axi_bram_ctrl_3/BRAM_PORTB"
-        ]
-      },
-      "axi_bram_ctrl_0_BRAM_PORTA": {
-        "interface_ports": [
-          "axi_bram_ctrl_0/BRAM_PORTA",
-          "blk_mem_gen_0/BRAM_PORTA"
-        ]
-      },
-      "processing_system7_0_M_AXI_GP0": {
-        "interface_ports": [
-          "processing_system7_0/M_AXI_GP0",
-          "axi_smc/S00_AXI"
+          "blk_mem_gen_2/BRAM_PORTA",
+          "axi_bram_ctrl_2/BRAM_PORTA"
         ]
       },
       "axi_smc_M00_AXI": {
@@ -1151,16 +1139,10 @@
           "axi_bram_ctrl_0/S_AXI"
         ]
       },
-      "axi_smc_M01_AXI": {
+      "processing_system7_0_M_AXI_GP0": {
         "interface_ports": [
-          "axi_smc/M01_AXI",
-          "axi_bram_ctrl_1/S_AXI"
-        ]
-      },
-      "axi_bram_ctrl_1_BRAM_PORTB": {
-        "interface_ports": [
-          "blk_mem_gen_1/BRAM_PORTB",
-          "axi_bram_ctrl_1/BRAM_PORTB"
+          "processing_system7_0/M_AXI_GP0",
+          "axi_smc/S00_AXI"
         ]
       },
       "processing_system7_0_DDR": {
@@ -1175,10 +1157,34 @@
           "processing_system7_0/FIXED_IO"
         ]
       },
-      "axi_bram_ctrl_0_BRAM_PORTB": {
+      "axi_smc_M02_AXI": {
         "interface_ports": [
-          "blk_mem_gen_0/BRAM_PORTB",
-          "axi_bram_ctrl_0/BRAM_PORTB"
+          "axi_smc/M02_AXI",
+          "axi_bram_ctrl_2/S_AXI"
+        ]
+      },
+      "axi_smc_M01_AXI": {
+        "interface_ports": [
+          "axi_smc/M01_AXI",
+          "axi_bram_ctrl_1/S_AXI"
+        ]
+      },
+      "axi_bram_ctrl_0_BRAM_PORTA": {
+        "interface_ports": [
+          "blk_mem_gen_0/BRAM_PORTA",
+          "axi_bram_ctrl_0/BRAM_PORTA"
+        ]
+      },
+      "axi_smc_M03_AXI": {
+        "interface_ports": [
+          "axi_smc/M03_AXI",
+          "axi_bram_ctrl_3/S_AXI"
+        ]
+      },
+      "axi_bram_ctrl_3_BRAM_PORTA": {
+        "interface_ports": [
+          "blk_mem_gen_3/BRAM_PORTA",
+          "axi_bram_ctrl_3/BRAM_PORTA"
         ]
       }
     },

@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7z020clg400-2
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,14 +35,14 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib C:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
 add_files C:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/design_1.bd
 set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_1/design_1_blk_mem_gen_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0/design_1_blk_mem_gen_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_1/design_1_axi_bram_ctrl_0_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_2/design_1_axi_bram_ctrl_0_2_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_3/design_1_axi_bram_ctrl_0_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_2/design_1_blk_mem_gen_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_3/design_1_blk_mem_gen_0_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_4/design_1_blk_mem_gen_0_4_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_1/design_1_blk_mem_gen_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_1_0/design_1_blk_mem_gen_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_1_1/design_1_blk_mem_gen_1_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_1/bd_afc3_psr_aclk_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_1/bd_afc3_psr_aclk_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Architecture/Intelligent-Architecture/Lab4/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_2/bd_afc3_arsw_0_ooc.xdc]

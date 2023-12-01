@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
 // Date        : Sat Nov  6 05:51:53 2021
 // Host        : ubuntu running 64-bit Ubuntu 18.04.2 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/roxbili/linux_zynq_7020/linux_zynq_7020.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_processing_system7_0_0 -prefix
+//               design_1_processing_system7_0_0_ design_1_processing_system7_0_0_stub.v
 // Design      : design_1_processing_system7_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-2

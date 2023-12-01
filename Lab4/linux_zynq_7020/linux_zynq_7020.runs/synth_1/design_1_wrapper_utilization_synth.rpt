@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Nov 28 23:53:49 2023
+| Date         : Fri Dec  1 19:34:54 2023
 | Host         : jiajun running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -177,10 +177,10 @@ Table of Contents
 +---------------------------------+------+
 | design_1_rst_ps7_0_50M_0        |    1 |
 | design_1_processing_system7_0_0 |    1 |
-| design_1_blk_mem_gen_0_4        |    1 |
-| design_1_blk_mem_gen_0_3        |    1 |
-| design_1_blk_mem_gen_0_2        |    1 |
+| design_1_blk_mem_gen_1_1        |    1 |
+| design_1_blk_mem_gen_1_0        |    1 |
 | design_1_blk_mem_gen_0_1        |    1 |
+| design_1_blk_mem_gen_0_0        |    1 |
 | design_1_axi_smc_0              |    1 |
 | design_1_axi_bram_ctrl_0_3      |    1 |
 | design_1_axi_bram_ctrl_0_2      |    1 |

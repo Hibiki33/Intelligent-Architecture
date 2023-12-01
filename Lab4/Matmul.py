@@ -15,15 +15,18 @@ class Matmul(object):
         self.bram = BRAM()
 
     def __call__(self, input: np.uint8, weight: np.int8):
+        print('~~~ send data ~~~')
         self.send_data(input, 'input')
         self.send_data(weight, 'weight')
 
         m, n = input.shape
         n, p = weight.shape
+        print('~~~ send instr ~~~')
         self.send_instr(m, p, n)
         self.send_flag()
         self.wait_flag()
 
+        print('~~~ recv output ~~~')
         output_arr = self.recv_output((m, p))
 
         return output_arr
@@ -42,9 +45,11 @@ class Matmul(object):
                 offset: 偏移地址名称，默认为default
         '''
         if block_name == 'input':
-            data = self._zero_padding(data, axis=0).T # 行方向补零，列方向写入
+            data = self._zero_padding(data, axis=0).T
+            print('input data: \n', data)
         elif block_name == 'weight':
             data = self._zero_padding(data, axis=1)
+            print('weight data: \n', data)
         else:
             raise ValueError('block_name must be input or weight')
         
@@ -57,8 +62,16 @@ class Matmul(object):
         '''
         # 63:48  47:32  31:16  15:0
         #  null      N      P     M
-        # byteorder little, unsigned
-        instr = np.array([m, p, n, 0], dtype=np.uint16)
+        # little end, unsigned
+        ir = 0
+        ir <<= 16
+        ir += n
+        ir <<= 16
+        ir += p
+        ir <<= 16
+        ir += m
+        instr = ir.to_bytes(8, byteorder='little', signed=False)
+        print('instr: \n', instr)
         self.bram.write(instr, block_name='ir', offset='instr')
 
     def send_flag(self):
@@ -76,7 +89,8 @@ class Matmul(object):
                 output_arr: shape为output_shape的np.ndarray
         '''
         row, col = output_shape
-        output_arr = self.bram.read(row * col, block_name='output', dtype=np.uint8).reshape(row, col)
+        output_arr = self.bram.read(row * col * self.systolic_size, block_name='output', dtype=np.int32).reshape(row, col)
+        print('output data: \n', output_arr)
 
         return output_arr
     
@@ -99,16 +113,18 @@ class Matmul(object):
         else:
             raise ValueError('axis must be 0 or 1')
         
+        return data
+        
     def read_flag(self):
         '''读取flag信号'''
-        flag = self.bram.read(1, block_name='ir', offset='flag', dtype=np.uint8)
+        flag = self.bram.read(1, block_name='ir', offset='flag')
         return flag
     
     def wait_flag(self):
         '''等待flag=1信号'''
-        value = -1
-        while value != 1:
-            value = self.read_flag()
+        value = 1
+        while value != 0:
+            value = self.read_flag()[0]
 
 
 if __name__ == '__main__':
