@@ -1,3 +1,5 @@
+#!/bin/bash
+
 wget https://github.com/tmux/tmux/releases/download/2.2/tmux-2.2.tar.gz
 wget https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz
 wget http://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz
