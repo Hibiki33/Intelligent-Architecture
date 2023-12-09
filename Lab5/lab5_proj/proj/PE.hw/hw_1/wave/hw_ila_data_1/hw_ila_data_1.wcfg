@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="E:/workspace/beihang_PE2/proj/PE.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="758fs"></ZoomEndTime>
+      <Cursor1Time time="443fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="273"></NameColumnWidth>
+      <ValueColumnWidth column_width="147"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_COM_SUBADDR" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_COM_SUBADDR[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_COM_SUBADDR[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_FINISH" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_FINISH[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_FINISH[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_FROM_BOOT" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_FROM_BOOT[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_FROM_BOOT[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_GET_COMMAND1" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_GET_COMMAND1[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_GET_COMMAND1[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_GET_COMMAND2" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_GET_COMMAND2[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_GET_COMMAND2[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_IDLE" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_IDLE[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_IDLE[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_INFO_MULTIPLY" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_INFO_MULTIPLY[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_INFO_MULTIPLY[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_INFO_OUT" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_INFO_OUT[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_INFO_OUT[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_INFO_RESHAPE" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_INFO_RESHAPE[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_INFO_RESHAPE[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_JUDGE_FINISH" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_JUDGE_FINISH[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_JUDGE_FINISH[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_WAIT_MULTIPLY" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_WAIT_MULTIPLY[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_WAIT_MULTIPLY[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_WAIT_OUT" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_WAIT_OUT[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_WAIT_OUT[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/MM_TOP/inst/U_CTRL/time_WAIT_RESHAPE" type="array">
+      <obj_property name="ElementShortName">design_1_i/MM_TOP/inst/U_CTRL/time_WAIT_RESHAPE[63:0]</obj_property>
+      <obj_property name="ObjectShortName">time_WAIT_RESHAPE[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>

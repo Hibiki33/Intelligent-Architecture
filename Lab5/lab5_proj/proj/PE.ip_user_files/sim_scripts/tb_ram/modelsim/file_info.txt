@@ -1,0 +1,2 @@
+tb_ram.v,verilog,xil_defaultlib,../../../../PE.srcs/sources_1/ip/tb_ram/sim/tb_ram.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
