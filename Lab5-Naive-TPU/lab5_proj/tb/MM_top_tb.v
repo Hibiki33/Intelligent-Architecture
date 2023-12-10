@@ -82,6 +82,8 @@ reg [15:0] M,N,P;
 
 reg [15:0] cnt;
 reg [15:0] cnt_f1;
+reg [15:0] cnt_f2;
+reg [15:0] cnt_f3;
 
 localparam IDLE       = 8'b0000_0001;
 localparam WRITE_FM   = 8'b0000_0010;
@@ -158,12 +160,16 @@ end
 always @(posedge arm_clk or posedge rst) begin
     if (rst) begin
         cnt_f1 <= 'b0;
+        cnt_f2 <= 'b0;
+        cnt_f3 <= 'b0;
         c_state_f1 <= IDLE;
         c_state_f2 <= IDLE;
         c_state_f3 <= IDLE;
     end
     else begin
         cnt_f1 <= cnt;
+        cnt_f2 <= cnt_f1;
+        cnt_f3 <= cnt_f2;
         c_state_f1 <= c_state;
         c_state_f2 <= c_state_f1;
         c_state_f3 <= c_state_f2;
@@ -206,7 +212,7 @@ end
 reg[0:7] feature[0:200][0:200];
 reg[0:7] weight[0:200][0:200];
 reg signed [0:31] std_result;
-reg[0:31] sim_result[0:40000];
+reg signed [0:31] sim_result[0:40000];
 reg flag;
 
 integer i, j, k;
@@ -347,8 +353,8 @@ initial begin
                 for (k = 0; k < N; k = k + 1) begin
                     std_result = std_result + $signed({8'b0,feature[i][k]}) * $signed(weight[k][j]);
                 end
-                if (std_result != $signed(sim_result[i * P + j])) begin
-                    $display("Error: %d  !=  %d", std_result, $signed(sim_result[i * P + j]));
+                if (std_result != sim_result[i * P + j]) begin
+                    $display("Error: %d  !=  %d", std_result, sim_result[i * P + j]);
                     flag = 1'b0;
                 end
             end
@@ -525,8 +531,8 @@ end
 always @(posedge arm_clk) begin
     if (c_state_f3==READ_OUT) begin
         // $fwrite(fp_w,"%d\n",$signed(arm_BRAM_OUT_douta));
+        sim_result[cnt_f3] = $signed(arm_BRAM_OUT_douta);
     end
-    sim_result[cnt] = $signed(arm_BRAM_OUT_douta);
 end
 
 tb_ram BRAM_FM32 (
