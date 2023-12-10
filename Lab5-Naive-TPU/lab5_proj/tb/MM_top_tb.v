@@ -203,88 +203,166 @@ always @(posedge arm_clk or posedge rst) begin
     end
 end
 
+reg[0:7] feature[0:200][0:200];
+reg[0:7] weight[0:200][0:200];
+reg signed [0:31] std_result;
+reg[0:31] sim_result[0:40000];
+reg flag;
+
+integer i, j, k;
+
 initial begin
     while(1) begin
-        file_FM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/FM.txt","r");
+        // file_FM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/FM.txt","r");
         FM_reg_valid = 1'b0;
         FM_reg0 = 'b0;
         FM_reg1 = 'b0;
         FM_reg2 = 'b0;
         FM_reg3 = 'b0;
         wait(c_state==WRITE_FM);
-        while(!$feof(file_FM)) begin
-            @(posedge arm_clk)
-            FM_reg_valid = 1'b1;
-            line_FM = $fscanf(file_FM,"%d,%d,%d,%d,",FM_reg0,FM_reg1,FM_reg2,FM_reg3);
+        // while(!$feof(file_FM)) begin
+        //     @(posedge arm_clk)
+        //     FM_reg_valid = 1'b1;
+        //     line_FM = $fscanf(file_FM,"%d,%d,%d,%d,",FM_reg0,FM_reg1,FM_reg2,FM_reg3);
+        // end
+        for (j = 0; j < N; j = j + 1) begin
+            for (i = 0; i < M; i = i + 4) begin
+                @(posedge arm_clk)
+                FM_reg_valid = 1'b1;
+                {FM_reg0, FM_reg1, FM_reg2, FM_reg3} = $random;
+                feature[i][j] = FM_reg0;
+                if (i + 1 < M) begin
+                    feature[i + 1][j] = FM_reg1;
+                end else begin
+                    feature[i + 1][j] = 'b0;
+                end
+                if (i + 2 < M) begin
+                    feature[i + 2][j] = FM_reg2;
+                end else begin
+                    feature[i + 2][j] = 'b0;
+                end
+                if (i + 3 < M) begin
+                    feature[i + 3][j] = FM_reg3;
+                end else begin
+                    feature[i + 3][j] = 'b0;
+                end
+            end
         end
-        FM_reg_valid = 1'b0;
-        FM_reg0 = 'b0;
-        FM_reg1 = 'b0;
-        FM_reg2 = 'b0;
-        FM_reg3 = 'b0;
-        file_FM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test2/FM.txt","r");
-        wait(c_state==WRITE_FM);
-        while(!$feof(file_FM)) begin
-            @(posedge arm_clk)
-            FM_reg_valid = 1'b1;
-            line_FM = $fscanf(file_FM,"%d,%d,%d,%d,",FM_reg0,FM_reg1,FM_reg2,FM_reg3);
-        end
+        // FM_reg_valid = 1'b0;
+        // FM_reg0 = 'b0;
+        // FM_reg1 = 'b0;
+        // FM_reg2 = 'b0;
+        // FM_reg3 = 'b0;
+        // file_FM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test2/FM.txt","r");
+        // wait(c_state==WRITE_FM);
+        // while(!$feof(file_FM)) begin
+        //     @(posedge arm_clk)
+        //     FM_reg_valid = 1'b1;
+        //     line_FM = $fscanf(file_FM,"%d,%d,%d,%d,",FM_reg0,FM_reg1,FM_reg2,FM_reg3);
+        // end
     end
 end
 
 initial begin
-    while(1) begin
-        file_WM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/WM.txt","r");
+    while (1) begin
+        // file_WM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/WM.txt","r");
         WM_reg_valid = 1'b0;
         WM_reg0 = 'b0;
         WM_reg1 = 'b0;
         WM_reg2 = 'b0;
         WM_reg3 = 'b0;
         wait(c_state==WRITE_WM);
-        while(!$feof(file_WM)) begin
-            @(posedge arm_clk)
-            WM_reg_valid = 1'b1;
-            line_WM = $fscanf(file_WM,"%d,%d,%d,%d,",WM_reg0,WM_reg1,WM_reg2,WM_reg3);
+        // while(!$feof(file_WM)) begin
+        //     @(posedge arm_clk)
+        //     WM_reg_valid = 1'b1;
+        //     line_WM = $fscanf(file_WM,"%d,%d,%d,%d,",WM_reg0,WM_reg1,WM_reg2,WM_reg3);
+        // end
+        for (i = 0; i < N; i = i + 1) begin
+            for (j = 0; j < P; j = j + 4) begin
+                @(posedge arm_clk)
+                WM_reg_valid = 1'b1;
+                {WM_reg0, WM_reg1, WM_reg2, WM_reg3} = $random;
+                weight[i][j] = WM_reg0;
+                if (j + 1 < P) begin
+                    weight[i][j + 1] = WM_reg1;
+                end else begin
+                    weight[i][j + 1] = 'b0;
+                end
+                if (j + 2 < P) begin
+                    weight[i][j + 2] = WM_reg2;
+                end else begin
+                    weight[i][j + 2] = 'b0;
+                end
+                if (j + 3 < P) begin
+                    weight[i][j + 3] = WM_reg3;
+                end else begin
+                    weight[i][j + 3] = 'b0;
+                end
+            end
         end
-        WM_reg_valid = 1'b0;
-        WM_reg0 = 'b0;
-        WM_reg1 = 'b0;
-        WM_reg2 = 'b0;
-        WM_reg3 = 'b0;
-        file_WM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test2/WM.txt","r");
-        wait(c_state==WRITE_WM);
-        while(!$feof(file_WM)) begin
-            @(posedge arm_clk)
-            WM_reg_valid = 1'b1;
-            line_WM = $fscanf(file_WM,"%d,%d,%d,%d,",WM_reg0,WM_reg1,WM_reg2,WM_reg3);
-        end
+        // WM_reg_valid = 1'b0;
+        // WM_reg0 = 'b0;
+        // WM_reg1 = 'b0;
+        // WM_reg2 = 'b0;
+        // WM_reg3 = 'b0;
+        // file_WM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test2/WM.txt","r");
+        // wait(c_state==WRITE_WM);
+        // while(!$feof(file_WM)) begin
+        //     @(posedge arm_clk)
+        //     WM_reg_valid = 1'b1;
+        //     line_WM = $fscanf(file_WM,"%d,%d,%d,%d,",WM_reg0,WM_reg1,WM_reg2,WM_reg3);
+        // end
     end
 end
 
 initial begin
-    while(1) begin
-        file_para = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/para.txt","r");
+    while (1) begin
+        // file_para = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/para.txt","r");
         wait(c_state==IDLE);
-        while(!$feof(file_para)) begin
-            line_para = $fscanf(file_para,"%d",M);
-            line_para = $fscanf(file_para,"%d",N);
-            line_para = $fscanf(file_para,"%d",P);
-        end
+        $display("~ Begin test ~");
+        // while(!$feof(file_para)) begin
+        //     line_para = $fscanf(file_para,"%d",M);
+        //     line_para = $fscanf(file_para,"%d",N);
+        //     line_para = $fscanf(file_para,"%d",P);
+        // end
+        M = {$random} % 10 + 1;
+        N = {$random} % 10 + 1;
+        P = {$random} % 10 + 1;
+        // wait(c_state==FINISH);
+        // file_para = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test2/para.txt","r");
+        // wait(c_state==IDLE);
+        // while(!$feof(file_para)) begin
+        //     line_para = $fscanf(file_para,"%d",M);
+        //     line_para = $fscanf(file_para,"%d",N);
+        //     line_para = $fscanf(file_para,"%d",P);
+        // end
+        // wait(c_state==FINISH);
         wait(c_state==FINISH);
-        file_para = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test2/para.txt","r");
-        wait(c_state==IDLE);
-        while(!$feof(file_para)) begin
-            line_para = $fscanf(file_para,"%d",M);
-            line_para = $fscanf(file_para,"%d",N);
-            line_para = $fscanf(file_para,"%d",P);
+        arm_work = 1'b0;
+        flag = 1'b1;
+        for (i = 0; i < M && flag; i = i + 1) begin
+            for (j = 0; j < P && flag; j = j + 1) begin
+                // @(posedge arm_clk)
+                std_result = 'b0;
+                for (k = 0; k < N; k = k + 1) begin
+                    std_result = std_result + $signed({8'b0,feature[i][k]}) * $signed(weight[k][j]);
+                end
+                if (std_result != $signed(sim_result[i * P + j])) begin
+                    $display("Error: %d  !=  %d", std_result, $signed(sim_result[i * P + j]));
+                    flag = 1'b0;
+                end
+            end
         end
-        wait(c_state==FINISH);
+        if (flag) begin
+            $display("~ Pass test ~");
+        end
+        arm_work = 1'b1;
     end
 end
 
-initial begin
-    fp_w = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/tb_MMout.txt","w");
-end
+// initial begin
+//     fp_w = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/tb_MMout.txt","w");
+// end
 
 initial begin
     clk = 1'b0;
@@ -446,8 +524,9 @@ end
 
 always @(posedge arm_clk) begin
     if (c_state_f3==READ_OUT) begin
-        $fwrite(fp_w,"%d\n",$signed(arm_BRAM_OUT_douta));
+        // $fwrite(fp_w,"%d\n",$signed(arm_BRAM_OUT_douta));
     end
+    sim_result[cnt] = $signed(arm_BRAM_OUT_douta);
 end
 
 tb_ram BRAM_FM32 (
