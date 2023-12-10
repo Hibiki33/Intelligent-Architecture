@@ -1,0 +1,41 @@
+WORKFLOW_OPERATION simulation,dialog;
+
+DEFINE_MEMORY_TYPE f0_mem_MEM_DEVICE [0x00008000] 32;
+DEFINE_MEMORY_TYPE f1_mem_MEM_DEVICE [0x00008000] 32;
+DEFINE_MEMORY_TYPE w0_mem_MEM_DEVICE [0x00008000] 32;
+DEFINE_MEMORY_TYPE w1_mem_MEM_DEVICE [0x00008000] 32;
+DEFINE_MEMORY_TYPE output_mem_MEM_DEVICE [0x00001000] 32;
+DEFINE_MEMORY_TYPE command_mem_MEM_DEVICE [0x00001000] 32;
+
+ADDRESS_MAP processing_system7_0 ARM 100 processing_system7_0
+   ADDRESS_SPACE f0_mem_ADDR_SPACE f0_mem_MEM_DEVICE  [0x40000000:0x40007FFF] axi_bram_ctrl_f0
+     BUS_BLOCK
+      f0_mem_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_0_1.mem";
+     END_BUS_BLOCK;
+   END_ADDRESS_SPACE;
+   ADDRESS_SPACE f1_mem_ADDR_SPACE f1_mem_MEM_DEVICE  [0x40008000:0x4000FFFF] axi_bram_ctrl_f1
+     BUS_BLOCK
+      f1_mem_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_0_2.mem";
+     END_BUS_BLOCK;
+   END_ADDRESS_SPACE;
+   ADDRESS_SPACE w0_mem_ADDR_SPACE w0_mem_MEM_DEVICE  [0x40010000:0x40017FFF] axi_bram_ctrl_w0
+     BUS_BLOCK
+      w0_mem_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_1_1.mem";
+     END_BUS_BLOCK;
+   END_ADDRESS_SPACE;
+   ADDRESS_SPACE w1_mem_ADDR_SPACE w1_mem_MEM_DEVICE  [0x40018000:0x4001FFFF] axi_bram_ctrl_w1
+     BUS_BLOCK
+      w1_mem_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_1_2.mem";
+     END_BUS_BLOCK;
+   END_ADDRESS_SPACE;
+   ADDRESS_SPACE output_mem_ADDR_SPACE output_mem_MEM_DEVICE  [0x40020000:0x40020FFF] axi_bram_ctrl_ot
+     BUS_BLOCK
+      output_mem_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_1_3.mem";
+     END_BUS_BLOCK;
+   END_ADDRESS_SPACE;
+   ADDRESS_SPACE command_mem_ADDR_SPACE command_mem_MEM_DEVICE  [0x40021000:0x40021FFF] axi_bram_ctrl_com
+     BUS_BLOCK
+      command_mem_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_1_4.mem";
+     END_BUS_BLOCK;
+   END_ADDRESS_SPACE;
+END_ADDRESS_MAP;

@@ -1,0 +1,307 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Color Coded_ScaleFactor":"0.47931",
+   "Color Coded_TopLeft":"-883,0",
+   "Default View_Layers":"/processing_system7_0_FCLK_CLK0:true|/bridge_0_f0_clk:true|/proc_sys_reset_0_peripheral_aresetn:true|/processing_system7_0_FCLK_RESET0_N:true|/bridge_0_f0_rst:true|/bridge_0_f1_clk:true|/bridge_0_ot_rst:true|/bridge_0_w1_clk:true|/bridge_0_w0_rst:true|/bridge_0_w0_clk:true|/bridge_0_com_clk:true|/bridge_0_com_rst:true|/bridge_0_f1_rst:true|/bridge_0_ot_clk:true|/bridge_0_w1_rst:true|/axi_bram_ctrl_com_bram_clk_a:true|/axi_bram_ctrl_com_bram_rst_a:true|",
+   "Default View_ScaleFactor":"0.636641",
+   "Default View_TopLeft":"-71,-99",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Grouping and No Loops_ExpandedHierarchyInLayout":"",
+   "Grouping and No Loops_Layers":"/bridge_0_f1_clk:true|/bridge_0_ot_clk:true|/bridge_0_w0_rst:true|/bridge_0_f0_rst:true|/proc_sys_reset_0_peripheral_aresetn:true|/bridge_0_w1_rst:true|/bridge_0_f0_clk:true|/processing_system7_0_FCLK_CLK0:true|/bridge_0_w1_clk:true|/bridge_0_ot_rst:true|/bridge_0_w0_clk:true|/bridge_0_com_rst:true|/bridge_0_f1_rst:true|/bridge_0_com_clk:true|/processing_system7_0_FCLK_RESET0_N:true|",
+   "Grouping and No Loops_Layout":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port group_1 -pg 1 -lvl 7 -x 1690 -y 200 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x -890 -y 60 -swap {44 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 45 46 0} -defaultsOSRD -pinBusDir group_1 right -pinBusY group_1 240R -pinDir USBIND_0 right -pinY USBIND_0 20R -pinDir M_AXI_GP0 right -pinY M_AXI_GP0 220R -pinDir M_AXI_GP0_ACLK right -pinY M_AXI_GP0_ACLK 260R -pinDir FCLK_CLK0 right -pinY FCLK_CLK0 280R -pinDir FCLK_RESET0_N right -pinY FCLK_RESET0_N 0R
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x -540 -y 60 -swap {4 0 1 2 3 5 6 7 8 9} -defaultsOSRD -pinDir slowest_sync_clk left -pinY slowest_sync_clk 80L -pinDir ext_reset_in left -pinY ext_reset_in 0L -pinDir aux_reset_in left -pinY aux_reset_in 20L -pinDir mb_debug_sys_rst left -pinY mb_debug_sys_rst 40L -pinDir dcm_locked left -pinY dcm_locked 60L -pinDir mb_reset right -pinY mb_reset 0R -pinBusDir bus_struct_reset right -pinBusY bus_struct_reset 20R -pinBusDir peripheral_reset right -pinBusY peripheral_reset 40R -pinBusDir interconnect_aresetn right -pinBusY interconnect_aresetn 60R -pinBusDir peripheral_aresetn right -pinBusY peripheral_aresetn 80R
+preplace inst smartconnect_0 -pg 1 -lvl 2 -x -540 -y 280 -defaultsOSRD -pinDir S00_AXI left -pinY S00_AXI 0L -pinDir M00_AXI right -pinY M00_AXI 0R -pinDir M01_AXI right -pinY M01_AXI 240R -pinDir M02_AXI right -pinY M02_AXI 460R -pinDir M03_AXI right -pinY M03_AXI 1520R -pinDir M04_AXI right -pinY M04_AXI 1660R -pinDir M05_AXI right -pinY M05_AXI 1800R -pinDir aclk left -pinY aclk 40L -pinDir aresetn right -pinY aresetn 1820R
+preplace inst axi_bram_ctrl_f0 -pg 1 -lvl 3 -x -170 -y 260 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 20L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 0R -pinDir s_axi_aclk left -pinY s_axi_aclk 40L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 60L
+preplace inst f0_mem -pg 1 -lvl 6 -x 1570 -y 260 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir BRAM_PORTB left -pinY BRAM_PORTB 20L -pinDir BRAM_PORTB.addrb left -pinY BRAM_PORTB.addrb 40L -pinDir BRAM_PORTB.clkb left -pinY BRAM_PORTB.clkb 60L -pinDir BRAM_PORTB.dinb left -pinY BRAM_PORTB.dinb 80L -pinDir BRAM_PORTB.doutb left -pinY BRAM_PORTB.doutb 100L -pinDir BRAM_PORTB.enb left -pinY BRAM_PORTB.enb 120L -pinDir BRAM_PORTB.rstb left -pinY BRAM_PORTB.rstb 140L -pinDir BRAM_PORTB.web left -pinY BRAM_PORTB.web 160L
+preplace inst f1_mem -pg 1 -lvl 6 -x 1570 -y 520 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir BRAM_PORTB left -pinY BRAM_PORTB 20L -pinDir BRAM_PORTB.addrb left -pinY BRAM_PORTB.addrb 40L -pinDir BRAM_PORTB.clkb left -pinY BRAM_PORTB.clkb 60L -pinDir BRAM_PORTB.dinb left -pinY BRAM_PORTB.dinb 80L -pinDir BRAM_PORTB.doutb left -pinY BRAM_PORTB.doutb 100L -pinDir BRAM_PORTB.enb left -pinY BRAM_PORTB.enb 120L -pinDir BRAM_PORTB.rstb left -pinY BRAM_PORTB.rstb 140L -pinDir BRAM_PORTB.web left -pinY BRAM_PORTB.web 160L
+preplace inst axi_bram_ctrl_f1 -pg 1 -lvl 3 -x -170 -y 520 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 0R -pinDir s_axi_aclk left -pinY s_axi_aclk 20L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 40L
+preplace inst axi_bram_ctrl_w0 -pg 1 -lvl 3 -x -170 -y 720 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 40R -pinDir s_axi_aclk left -pinY s_axi_aclk 20L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 40L
+preplace inst axi_bram_ctrl_w1 -pg 1 -lvl 3 -x -170 -y 1800 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 0R -pinDir s_axi_aclk left -pinY s_axi_aclk 20L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 40L
+preplace inst axi_bram_ctrl_ot -pg 1 -lvl 3 -x -170 -y 1940 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 40R -pinDir s_axi_aclk left -pinY s_axi_aclk 20L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 40L
+preplace inst axi_bram_ctrl_com -pg 1 -lvl 3 -x -170 -y 2080 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 29 28} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 160R -pinDir BRAM_PORTA.bram_addr_a right -pinY BRAM_PORTA.bram_addr_a 180R -pinDir BRAM_PORTA.bram_clk_a right -pinY BRAM_PORTA.bram_clk_a 200R -pinDir BRAM_PORTA.bram_wrdata_a right -pinY BRAM_PORTA.bram_wrdata_a 220R -pinDir BRAM_PORTA.bram_rddata_a right -pinY BRAM_PORTA.bram_rddata_a 240R -pinDir BRAM_PORTA.bram_en_a right -pinY BRAM_PORTA.bram_en_a 260R -pinDir BRAM_PORTA.bram_rst_a right -pinY BRAM_PORTA.bram_rst_a 280R -pinDir BRAM_PORTA.bram_we_a right -pinY BRAM_PORTA.bram_we_a 300R -pinDir s_axi_aclk left -pinY s_axi_aclk 40L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 20L
+preplace inst w0_mem -pg 1 -lvl 6 -x 1570 -y 780 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir BRAM_PORTB left -pinY BRAM_PORTB 360L -pinDir BRAM_PORTB.addrb left -pinY BRAM_PORTB.addrb 380L -pinDir BRAM_PORTB.clkb left -pinY BRAM_PORTB.clkb 400L -pinDir BRAM_PORTB.dinb left -pinY BRAM_PORTB.dinb 420L -pinDir BRAM_PORTB.doutb left -pinY BRAM_PORTB.doutb 440L -pinDir BRAM_PORTB.enb left -pinY BRAM_PORTB.enb 460L -pinDir BRAM_PORTB.rstb left -pinY BRAM_PORTB.rstb 480L -pinDir BRAM_PORTB.web left -pinY BRAM_PORTB.web 500L
+preplace inst w1_mem -pg 1 -lvl 6 -x 1570 -y 1720 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir BRAM_PORTB left -pinY BRAM_PORTB 20L -pinDir BRAM_PORTB.addrb left -pinY BRAM_PORTB.addrb 40L -pinDir BRAM_PORTB.clkb left -pinY BRAM_PORTB.clkb 60L -pinDir BRAM_PORTB.dinb left -pinY BRAM_PORTB.dinb 80L -pinDir BRAM_PORTB.doutb left -pinY BRAM_PORTB.doutb 100L -pinDir BRAM_PORTB.enb left -pinY BRAM_PORTB.enb 120L -pinDir BRAM_PORTB.rstb left -pinY BRAM_PORTB.rstb 140L -pinDir BRAM_PORTB.web left -pinY BRAM_PORTB.web 160L
+preplace inst output_mem -pg 1 -lvl 6 -x 1570 -y 1980 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir BRAM_PORTB left -pinY BRAM_PORTB 20L -pinDir BRAM_PORTB.addrb left -pinY BRAM_PORTB.addrb 40L -pinDir BRAM_PORTB.clkb left -pinY BRAM_PORTB.clkb 60L -pinDir BRAM_PORTB.dinb left -pinY BRAM_PORTB.dinb 80L -pinDir BRAM_PORTB.doutb left -pinY BRAM_PORTB.doutb 100L -pinDir BRAM_PORTB.enb left -pinY BRAM_PORTB.enb 120L -pinDir BRAM_PORTB.rstb left -pinY BRAM_PORTB.rstb 140L -pinDir BRAM_PORTB.web left -pinY BRAM_PORTB.web 160L
+preplace inst command_mem -pg 1 -lvl 6 -x 1570 -y 2240 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir BRAM_PORTA.addra left -pinY BRAM_PORTA.addra 20L -pinDir BRAM_PORTA.clka left -pinY BRAM_PORTA.clka 40L -pinDir BRAM_PORTA.dina left -pinY BRAM_PORTA.dina 60L -pinDir BRAM_PORTA.douta left -pinY BRAM_PORTA.douta 80L -pinDir BRAM_PORTA.ena left -pinY BRAM_PORTA.ena 100L -pinDir BRAM_PORTA.rsta left -pinY BRAM_PORTA.rsta 120L -pinDir BRAM_PORTA.wea left -pinY BRAM_PORTA.wea 140L -pinDir BRAM_PORTB left -pinY BRAM_PORTB 160L -pinDir BRAM_PORTB.addrb left -pinY BRAM_PORTB.addrb 180L -pinDir BRAM_PORTB.clkb left -pinY BRAM_PORTB.clkb 200L -pinDir BRAM_PORTB.dinb left -pinY BRAM_PORTB.dinb 220L -pinDir BRAM_PORTB.doutb left -pinY BRAM_PORTB.doutb 240L -pinDir BRAM_PORTB.enb left -pinY BRAM_PORTB.enb 260L -pinDir BRAM_PORTB.rstb left -pinY BRAM_PORTB.rstb 280L -pinDir BRAM_PORTB.web left -pinY BRAM_PORTB.web 300L
+preplace inst bridge_0 -pg 1 -lvl 3 -x -170 -y 860 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 26 25 24 27 28 29 30 31 42 33 34 35 43 36 37 39 40 32 41 38} -defaultsOSRD -pinDir clk left -pinY clk 0L -pinDir rst left -pinY rst 20L -pinBusDir f0_addr right -pinBusY f0_addr 0R -pinDir f0_clk right -pinY f0_clk 20R -pinBusDir f0_wrdata right -pinBusY f0_wrdata 40R -pinBusDir f0_rddata right -pinBusY f0_rddata 60R -pinDir f0_en right -pinY f0_en 80R -pinDir f0_rst right -pinY f0_rst 100R -pinBusDir f0_we right -pinBusY f0_we 120R -pinBusDir f1_addr right -pinBusY f1_addr 140R -pinDir f1_clk right -pinY f1_clk 160R -pinBusDir f1_wrdata right -pinBusY f1_wrdata 180R -pinBusDir f1_rddata right -pinBusY f1_rddata 200R -pinDir f1_en right -pinY f1_en 220R -pinDir f1_rst right -pinY f1_rst 240R -pinBusDir f1_we right -pinBusY f1_we 260R -pinBusDir w0_addr right -pinBusY w0_addr 280R -pinDir w0_clk right -pinY w0_clk 300R -pinBusDir w0_wrdata right -pinBusY w0_wrdata 320R -pinBusDir w0_rddata right -pinBusY w0_rddata 340R -pinDir w0_en right -pinY w0_en 360R -pinDir w0_rst right -pinY w0_rst 380R -pinBusDir w0_we right -pinBusY w0_we 420R -pinBusDir w1_addr right -pinBusY w1_addr 440R -pinDir w1_clk right -pinY w1_clk 500R -pinBusDir w1_wrdata right -pinBusY w1_wrdata 480R -pinBusDir w1_rddata right -pinBusY w1_rddata 460R -pinDir w1_en right -pinY w1_en 520R -pinDir w1_rst right -pinY w1_rst 540R -pinBusDir w1_we right -pinBusY w1_we 560R -pinBusDir ot_addr right -pinBusY ot_addr 580R -pinDir ot_clk right -pinY ot_clk 600R -pinBusDir ot_wrdata right -pinBusY ot_wrdata 820R -pinBusDir ot_rddata right -pinBusY ot_rddata 640R -pinDir ot_en right -pinY ot_en 660R -pinDir ot_rst right -pinY ot_rst 680R -pinBusDir ot_we right -pinBusY ot_we 840R -pinBusDir com_addr right -pinBusY com_addr 700R -pinDir com_clk right -pinY com_clk 720R -pinBusDir com_wrdata right -pinBusY com_wrdata 760R -pinBusDir com_rddata right -pinBusY com_rddata 780R -pinDir com_en right -pinY com_en 620R -pinDir com_rst right -pinY com_rst 800R -pinBusDir com_we right -pinBusY com_we 740R
+preplace inst com_a_ila -pg 1 -lvl 5 -x 790 -y 2320 -swap {1 0 2 3 4 5 6} -defaultsOSRD -pinDir clk left -pinY clk 20L -pinBusDir probe0 left -pinBusY probe0 0L -pinBusDir probe1 left -pinBusY probe1 40L -pinBusDir probe2 right -pinBusY probe2 0R -pinBusDir probe3 left -pinBusY probe3 60L -pinBusDir probe4 left -pinBusY probe4 80L -pinBusDir probe5 left -pinBusY probe5 100L
+preplace inst com_b_ila -pg 1 -lvl 4 -x 460 -y 1730 -defaultsOSRD -pinDir clk left -pinY clk 0L -pinBusDir probe0 left -pinBusY probe0 20L -pinBusDir probe1 left -pinBusY probe1 40L -pinBusDir probe2 left -pinBusY probe2 60L -pinBusDir probe3 left -pinBusY probe3 80L -pinBusDir probe4 left -pinBusY probe4 100L -pinBusDir probe5 left -pinBusY probe5 120L
+preplace netloc netgroup_1 1 1 6 -710J 200 NJ 200 NJ 200 N 200 N 200 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 2 -730 220 -350
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 2 1 -330 140n
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 N 60
+preplace netloc bridge_0_com_we 1 3 3 310J 1590 N 1590 930
+preplace netloc bridge_0_com_rst 1 3 3 290J 1670 N 1670 910
+preplace netloc bridge_0_com_en 1 3 3 190J 1470 N 1470 1050
+preplace netloc bridge_0_com_clk 1 3 3 290J 1570 N 1570 1010
+preplace netloc bridge_0_com_wrdata 1 3 3 330J 1610 N 1610 970
+preplace netloc command_mem_doutb 1 3 3 350J 1630 N 1630 950
+preplace netloc bridge_0_f0_clk 1 3 3 10 320 N 320 N
+preplace netloc bridge_0_f0_rst 1 3 3 90 480 N 480 1430
+preplace netloc bridge_0_f0_we 1 3 3 110 500 N 500 1450
+preplace netloc bridge_0_f0_en 1 3 3 70 460 N 460 1410
+preplace netloc f0_mem_doutb 1 3 3 50J 440 N 440 1390
+preplace netloc bridge_0_f0_wrdata 1 3 3 30 340 N 340 N
+preplace netloc bridge_0_f0_addr 1 3 3 -10 300 N 300 N
+preplace netloc bridge_0_f1_addr 1 3 3 130 560 N 560 N
+preplace netloc bridge_0_f1_clk 1 3 3 150 580 N 580 N
+preplace netloc bridge_0_f1_wrdata 1 3 3 170 600 N 600 N
+preplace netloc bridge_0_f1_en 1 3 3 210 700 N 700 1410
+preplace netloc bridge_0_f1_rst 1 3 3 230 720 N 720 1430
+preplace netloc bridge_0_f1_we 1 3 3 250 740 N 740 1450
+preplace netloc f1_mem_doutb 1 3 3 190J 680 N 680 1390
+preplace netloc w0_mem_doutb 1 3 3 NJ 1200 N 1200 1390
+preplace netloc bridge_0_w0_addr 1 3 3 N 1140 N 1140 1450
+preplace netloc bridge_0_w0_clk 1 3 3 N 1160 N 1160 1430
+preplace netloc bridge_0_w0_wrdata 1 3 3 N 1180 N 1180 1410
+preplace netloc bridge_0_w0_en 1 3 3 N 1220 N 1220 1370
+preplace netloc bridge_0_w0_rst 1 3 3 N 1240 N 1240 1350
+preplace netloc bridge_0_w0_we 1 3 3 -10 1270 N 1270 1330
+preplace netloc output_mem_doutb 1 3 3 210J 1490 N 1490 1110
+preplace netloc w1_mem_doutb 1 3 3 30J 1310 N 1310 1290
+preplace netloc bridge_0_ot_addr 1 3 3 150J 1430 N 1430 1170
+preplace netloc bridge_0_ot_clk 1 3 3 170J 1450 N 1450 1150
+preplace netloc bridge_0_ot_wrdata 1 3 3 110J 2000 N 2000 990
+preplace netloc bridge_0_ot_en 1 3 3 230J 1510 N 1510 1090
+preplace netloc bridge_0_ot_rst 1 3 3 250J 1530 N 1530 1070
+preplace netloc bridge_0_ot_we 1 3 3 30J 2300 650 2260 1390
+preplace netloc bridge_0_w1_addr 1 3 3 10J 1290 N 1290 1310
+preplace netloc bridge_0_w1_clk 1 3 3 70J 1350 N 1350 1250
+preplace netloc bridge_0_w1_wrdata 1 3 3 50J 1330 N 1330 1270
+preplace netloc bridge_0_w1_en 1 3 3 90J 1370 N 1370 1230
+preplace netloc bridge_0_w1_rst 1 3 3 110J 1390 N 1390 1210
+preplace netloc bridge_0_w1_we 1 3 3 130J 1410 N 1410 1190
+preplace netloc bridge_0_com_addr 1 3 3 270 1550 N 1550 1030
+preplace netloc axi_bram_ctrl_com_bram_addr_a 1 3 2 N 2260 630
+preplace netloc axi_bram_ctrl_com_bram_wrdata_a 1 3 2 -10 2320 610
+preplace netloc axi_bram_ctrl_com_bram_en_a 1 3 2 N 2340 590
+preplace netloc axi_bram_ctrl_com_bram_rst_a 1 3 2 N 2360 570
+preplace netloc axi_bram_ctrl_com_bram_we_a 1 3 2 N 2380 550
+preplace netloc axi_bram_ctrl_com_bram_clk_a 1 3 2 N 2280 670
+preplace netloc command_mem_douta 1 5 1 NJ 2320
+preplace netloc axi_bram_ctrl_2_BRAM_PORTA 1 3 3 NJ 760 N 760 1410
+preplace netloc smartconnect_0_M04_AXI 1 2 1 NJ 1940
+preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 3 3 NJ 520 N 520 N
+preplace netloc smartconnect_0_M00_AXI 1 2 1 NJ 280
+preplace netloc smartconnect_0_M02_AXI 1 2 1 -370J 720n
+preplace netloc smartconnect_0_M01_AXI 1 2 1 NJ 520
+preplace netloc axi_bram_ctrl_5_BRAM_PORTA 1 3 3 NJ 2240 N 2240 N
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 N 280
+preplace netloc axi_bram_ctrl_3_BRAM_PORTA 1 3 3 370J 1650 N 1650 1130
+preplace netloc smartconnect_0_M03_AXI 1 2 1 NJ 1800
+preplace netloc smartconnect_0_M05_AXI 1 2 1 NJ 2080
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 3 NJ 260 N 260 N
+preplace netloc axi_bram_ctrl_4_BRAM_PORTA 1 3 3 NJ 1980 N 1980 N
+levelinfo -pg 1 -1050 -890 -540 -170 460 790 1570 1690
+pagesize -pg 1 -db -bbox -sgen -1050 0 1800 2910
+",
+   "Grouping and No Loops_ScaleFactor":"0.473662",
+   "Grouping and No Loops_TopLeft":"-1328,-289",
+   "Interfaces View_Layers":"/processing_system7_0_FCLK_CLK0:false|/bridge_0_f0_clk:false|/proc_sys_reset_0_peripheral_aresetn:false|/processing_system7_0_FCLK_RESET0_N:false|/bridge_0_f0_rst:false|/bridge_0_ot_rst:false|/bridge_0_w1_clk:false|/bridge_0_f1_rst:false|/bridge_0_w0_rst:false|/bridge_0_w1_rst:false|/bridge_0_f1_clk:false|/bridge_0_w0_clk:false|/bridge_0_com_rst:false|/bridge_0_com_clk:false|/bridge_0_ot_clk:false|/axi_bram_ctrl_com_bram_clk_a:false|/axi_bram_ctrl_com_bram_rst_a:false|/MM_TOP_BRAM_WM32_rst:false|/vio_0_probe_out0:false|/MM_TOP_BRAM_FM32_clk:false|/MM_TOP_BRAM_CTRL_rst:false|/MM_TOP_BRAM_OUT_rst:false|/MM_TOP_BRAM_FM32_rst:false|/MM_TOP_BRAM_CTRL_clk:false|/MM_TOP_BRAM_WM32_clk:false|/MM_TOP_BRAM_OUT_clk:false|",
+   "Interfaces View_ScaleFactor":"1.0",
+   "Interfaces View_TopLeft":"27,-137",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layers":"/processing_system7_0_FCLK_CLK0:true|/bridge_0_ot_rst:true|/bridge_0_w1_clk:true|/bridge_0_f1_rst:true|/bridge_0_w0_rst:true|/bridge_0_w1_rst:true|/proc_sys_reset_0_peripheral_aresetn:true|/bridge_0_f1_clk:true|/bridge_0_f0_rst:true|/bridge_0_f0_clk:true|/bridge_0_w0_clk:true|/bridge_0_com_rst:true|/bridge_0_com_clk:true|/processing_system7_0_FCLK_RESET0_N:true|/bridge_0_ot_clk:true|/MM_TOP_BRAM_WM32_rst:true|/vio_0_probe_out0:true|/MM_TOP_BRAM_FM32_clk:true|/MM_TOP_BRAM_CTRL_rst:true|/MM_TOP_BRAM_OUT_rst:true|/MM_TOP_BRAM_FM32_rst:true|/MM_TOP_BRAM_CTRL_clk:true|/MM_TOP_BRAM_WM32_clk:true|/MM_TOP_BRAM_OUT_clk:true|",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 8 -x 1970 -y 60 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 8 -x 1970 -y 80 -defaultsOSRD
+preplace inst processing_system7 -pg 1 -lvl 1 -x -120 -y 1010 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 27 24 25 26 23 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68} -defaultsOSRD -pinDir DDR right -pinY DDR 0R -pinDir FIXED_IO right -pinY FIXED_IO 20R -pinDir USBIND_0 right -pinY USBIND_0 80R -pinDir M_AXI_GP0 right -pinY M_AXI_GP0 60R -pinDir M_AXI_GP0_ACLK right -pinY M_AXI_GP0_ACLK 860R -pinDir FCLK_CLK0 right -pinY FCLK_CLK0 880R -pinDir FCLK_RESET0_N right -pinY FCLK_RESET0_N 900R
+preplace inst proc_sys_reset -pg 1 -lvl 1 -x -120 -y 2030 -swap {5 1 2 3 4 6 7 8 9 0} -defaultsOSRD -pinDir slowest_sync_clk right -pinY slowest_sync_clk 20R -pinDir ext_reset_in left -pinY ext_reset_in 0L -pinDir aux_reset_in left -pinY aux_reset_in 20L -pinDir mb_debug_sys_rst left -pinY mb_debug_sys_rst 40L -pinDir dcm_locked left -pinY dcm_locked 60L -pinDir mb_reset right -pinY mb_reset 40R -pinBusDir bus_struct_reset right -pinBusY bus_struct_reset 60R -pinBusDir peripheral_reset right -pinBusY peripheral_reset 80R -pinBusDir interconnect_aresetn right -pinBusY interconnect_aresetn 100R -pinBusDir peripheral_aresetn right -pinBusY peripheral_aresetn 0R
+preplace inst smartconnect -pg 1 -lvl 2 -x 310 -y 980 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 127 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 107 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 148 147} -defaultsOSRD -pinDir S00_AXI left -pinY S00_AXI 0L -pinDir M00_AXI right -pinY M00_AXI 0R -pinDir M01_AXI right -pinY M01_AXI 680R -pinDir M02_AXI right -pinY M02_AXI 1760R -pinDir M03_AXI right -pinY M03_AXI 1360R -pinDir aclk left -pinY aclk 800L -pinDir aresetn left -pinY aresetn 780L
+preplace inst axi_bram_ctrl_BRAM_FM64 -pg 1 -lvl 3 -x 820 -y 970 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 41 40} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 0R -pinDir s_axi_aclk left -pinY s_axi_aclk 660L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 640L
+preplace inst axi_bram_ctrl_BRAM_WM128 -pg 1 -lvl 3 -x 820 -y 1730 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 41 40} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 0R -pinDir s_axi_aclk left -pinY s_axi_aclk 660L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 640L
+preplace inst axi_bram_ctrl_BRAM_CTRL -pg 1 -lvl 3 -x 820 -y 2630 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 29 28} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 0R -pinDir s_axi_aclk left -pinY s_axi_aclk 40L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 20L
+preplace inst axi_bram_ctrl_BRAM_OUT -pg 1 -lvl 3 -x 820 -y 2490 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 29 28} -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir BRAM_PORTA right -pinY BRAM_PORTA 0R -pinDir s_axi_aclk left -pinY s_axi_aclk 40L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 20L
+preplace inst BRAM_FM64 -pg 1 -lvl 4 -x 1730 -y 140 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir BRAM_PORTB left -pinY BRAM_PORTB 160L -pinDir BRAM_PORTB.addrb left -pinY BRAM_PORTB.addrb 180L -pinDir BRAM_PORTB.clkb left -pinY BRAM_PORTB.clkb 200L -pinDir BRAM_PORTB.dinb left -pinY BRAM_PORTB.dinb 220L -pinDir BRAM_PORTB.doutb left -pinY BRAM_PORTB.doutb 240L -pinDir BRAM_PORTB.enb left -pinY BRAM_PORTB.enb 260L -pinDir BRAM_PORTB.rstb left -pinY BRAM_PORTB.rstb 280L -pinDir BRAM_PORTB.web left -pinY BRAM_PORTB.web 300L
+preplace inst BRAM_WM128 -pg 1 -lvl 4 -x 1730 -y 540 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir BRAM_PORTB left -pinY BRAM_PORTB 20L -pinDir BRAM_PORTB.addrb left -pinY BRAM_PORTB.addrb 40L -pinDir BRAM_PORTB.clkb left -pinY BRAM_PORTB.clkb 60L -pinDir BRAM_PORTB.dinb left -pinY BRAM_PORTB.dinb 80L -pinDir BRAM_PORTB.doutb left -pinY BRAM_PORTB.doutb 100L -pinDir BRAM_PORTB.enb left -pinY BRAM_PORTB.enb 120L -pinDir BRAM_PORTB.rstb left -pinY BRAM_PORTB.rstb 140L -pinDir BRAM_PORTB.web left -pinY BRAM_PORTB.web 160L
+preplace inst BRAM_CTRL -pg 1 -lvl 4 -x 1730 -y 1200 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir BRAM_PORTB left -pinY BRAM_PORTB 20L -pinDir BRAM_PORTB.addrb left -pinY BRAM_PORTB.addrb 40L -pinDir BRAM_PORTB.clkb left -pinY BRAM_PORTB.clkb 60L -pinDir BRAM_PORTB.dinb left -pinY BRAM_PORTB.dinb 80L -pinDir BRAM_PORTB.doutb left -pinY BRAM_PORTB.doutb 100L -pinDir BRAM_PORTB.enb left -pinY BRAM_PORTB.enb 120L -pinDir BRAM_PORTB.rstb left -pinY BRAM_PORTB.rstb 140L -pinDir BRAM_PORTB.web left -pinY BRAM_PORTB.web 160L
+preplace inst BRAM_OUT -pg 1 -lvl 4 -x 1730 -y 800 -defaultsOSRD -pinDir BRAM_PORTA left -pinY BRAM_PORTA 0L -pinDir BRAM_PORTB left -pinY BRAM_PORTB 160L -pinDir BRAM_PORTB.addrb left -pinY BRAM_PORTB.addrb 180L -pinDir BRAM_PORTB.clkb left -pinY BRAM_PORTB.clkb 200L -pinDir BRAM_PORTB.dinb left -pinY BRAM_PORTB.dinb 220L -pinDir BRAM_PORTB.doutb left -pinY BRAM_PORTB.doutb 240L -pinDir BRAM_PORTB.enb left -pinY BRAM_PORTB.enb 260L -pinDir BRAM_PORTB.rstb left -pinY BRAM_PORTB.rstb 280L -pinDir BRAM_PORTB.web left -pinY BRAM_PORTB.web 300L
+preplace inst MM_TOP -pg 1 -lvl 3 -x 820 -y 290 -swap {12 5 2 3 4 0 6 7 8 9 10 11 1 13 14 15 23 24 25 26 27 28 29 16 17 18 19 20 21 22} -defaultsOSRD -pinDir clk left -pinY clk 60L -pinDir arst_n left -pinY arst_n 40L -pinBusDir BRAM_FM64_addr right -pinBusY BRAM_FM64_addr 0R -pinDir BRAM_FM64_clk right -pinY BRAM_FM64_clk 20R -pinBusDir BRAM_FM64_wrdata right -pinBusY BRAM_FM64_wrdata 40R -pinBusDir BRAM_FM64_rddata left -pinBusY BRAM_FM64_rddata 0L -pinDir BRAM_FM64_en right -pinY BRAM_FM64_en 60R -pinDir BRAM_FM64_rst right -pinY BRAM_FM64_rst 80R -pinBusDir BRAM_FM64_we right -pinBusY BRAM_FM64_we 100R -pinBusDir BRAM_WM128_addr right -pinBusY BRAM_WM128_addr 120R -pinDir BRAM_WM128_clk right -pinY BRAM_WM128_clk 140R -pinBusDir BRAM_WM128_wrdata right -pinBusY BRAM_WM128_wrdata 160R -pinBusDir BRAM_WM128_rddata left -pinBusY BRAM_WM128_rddata 20L -pinDir BRAM_WM128_en right -pinY BRAM_WM128_en 180R -pinDir BRAM_WM128_rst right -pinY BRAM_WM128_rst 200R -pinBusDir BRAM_WM128_we right -pinBusY BRAM_WM128_we 280R -pinBusDir BRAM_CTRL_addr right -pinBusY BRAM_CTRL_addr 440R -pinDir BRAM_CTRL_clk right -pinY BRAM_CTRL_clk 460R -pinBusDir BRAM_CTRL_wrdata right -pinBusY BRAM_CTRL_wrdata 480R -pinBusDir BRAM_CTRL_rddata right -pinBusY BRAM_CTRL_rddata 500R -pinDir BRAM_CTRL_en right -pinY BRAM_CTRL_en 520R -pinDir BRAM_CTRL_rst right -pinY BRAM_CTRL_rst 540R -pinBusDir BRAM_CTRL_we right -pinBusY BRAM_CTRL_we 560R -pinBusDir BRAM_OUT_addr right -pinBusY BRAM_OUT_addr 300R -pinDir BRAM_OUT_clk right -pinY BRAM_OUT_clk 320R -pinBusDir BRAM_OUT_wrdata right -pinBusY BRAM_OUT_wrdata 340R -pinBusDir BRAM_OUT_rddata right -pinBusY BRAM_OUT_rddata 360R -pinDir BRAM_OUT_en right -pinY BRAM_OUT_en 380R -pinDir BRAM_OUT_rst right -pinY BRAM_OUT_rst 400R -pinBusDir BRAM_OUT_we right -pinBusY BRAM_OUT_we 420R
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 -310 1970 50
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 2 110 2800 480
+preplace netloc vio_0_probe_out0 1 1 2 90 920 460
+preplace netloc MM_TOP_BRAM_FM32_en 1 3 1 1530 350n
+preplace netloc MM_TOP_BRAM_FM32_we 1 3 1 1470 390n
+preplace netloc MM_TOP_BRAM_FM32_wrdata 1 3 1 1550 330n
+preplace netloc MM_TOP_BRAM_FM32_clk 1 3 1 1570 310n
+preplace netloc MM_TOP_BRAM_FM32_addr 1 3 1 1610 290n
+preplace netloc BRAM_FM32_doutb 1 2 2 460 230 1590J
+preplace netloc MM_TOP_BRAM_WM32_clk 1 3 1 1430 430n
+preplace netloc MM_TOP_BRAM_WM32_wrdata 1 3 1 1410 450n
+preplace netloc MM_TOP_BRAM_WM32_en 1 3 1 1390 470n
+preplace netloc MM_TOP_BRAM_WM32_rst 1 3 1 1370 490n
+preplace netloc MM_TOP_BRAM_WM32_we 1 3 1 1350 570n
+preplace netloc MM_TOP_BRAM_WM32_addr 1 3 1 1450 410n
+preplace netloc BRAM_WM32_doutb 1 2 2 440 210 1510J
+preplace netloc MM_TOP_BRAM_OUT_clk 1 3 1 1270 610n
+preplace netloc MM_TOP_BRAM_OUT_addr 1 3 1 1310 590n
+preplace netloc MM_TOP_BRAM_OUT_wrdata 1 3 1 1250 630n
+preplace netloc MM_TOP_BRAM_OUT_en 1 3 1 1210 670n
+preplace netloc MM_TOP_BRAM_OUT_rst 1 3 1 1190 690n
+preplace netloc MM_TOP_BRAM_OUT_we 1 3 1 1170 710n
+preplace netloc BRAM_OUT_doutb 1 3 1 1230 650n
+preplace netloc MM_TOP_BRAM_CTRL_addr 1 3 1 1150 730n
+preplace netloc MM_TOP_BRAM_CTRL_clk 1 3 1 1130 750n
+preplace netloc MM_TOP_BRAM_CTRL_wrdata 1 3 1 1110 770n
+preplace netloc BRAM_CTRL_doutb 1 3 1 1090J 790n
+preplace netloc MM_TOP_BRAM_CTRL_en 1 3 1 1070 810n
+preplace netloc MM_TOP_BRAM_CTRL_rst 1 3 1 1050 830n
+preplace netloc MM_TOP_BRAM_CTRL_we 1 3 1 1030 850n
+preplace netloc MM_TOP_BRAM_FM32_rst 1 3 1 1490 370n
+preplace netloc processing_system7_0_DDR 1 1 7 50J 60 NJ 60 NJ 60 NJ 60 NJ 60 NJ 60 N
+preplace netloc smartconnect_0_M01_AXI 1 2 1 500J 1660n
+preplace netloc axi_bram_ctrl_3_BRAM_PORTA 1 3 1 1430J 800n
+preplace netloc smartconnect_M03_AXI 1 2 1 440 2340n
+preplace netloc smartconnect_0_M00_AXI 1 2 1 440J 970n
+preplace netloc smartconnect_M02_AXI 1 2 1 500 2630n
+preplace netloc processing_system7_0_FIXED_IO 1 1 7 70J 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 N
+preplace netloc axi_bram_ctrl_2_BRAM_PORTA 1 3 1 1590J 1200n
+preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 3 1 1330J 540n
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 110 980n
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 1290J 140n
+levelinfo -pg 1 -330 -120 310 820 1730 1850 1890 1930 1970
+pagesize -pg 1 -db -bbox -sgen -330 0 2080 2810
+",
+   "No Loops_ScaleFactor":"0.206174",
+   "No Loops_TopLeft":"-291,39",
+   "Reduced Jogs_ExpandedHierarchyInLayout":"",
+   "Reduced Jogs_Layers":"/bridge_0_ot_clk:true|/bridge_0_w0_rst:true|/bridge_0_com_clk:true|/bridge_0_f1_clk:true|/proc_sys_reset_0_peripheral_aresetn:true|/bridge_0_ot_rst:true|/bridge_0_f0_rst:true|/processing_system7_0_FCLK_CLK0:true|/bridge_0_w1_rst:true|/bridge_0_f0_clk:true|/bridge_0_w1_clk:true|/bridge_0_f1_rst:true|/bridge_0_w0_clk:true|/processing_system7_0_FCLK_RESET0_N:true|/bridge_0_com_rst:true|/axi_bram_ctrl_com_bram_clk_a:true|/axi_bram_ctrl_com_bram_rst_a:true|",
+   "Reduced Jogs_Layout":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 2560 -y 960 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 2560 -y 980 -defaultsOSRD
+preplace inst processing_system7 -pg 1 -lvl 1 -x 240 -y 1120 -swap {16 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 27 17 18 19 20 21 22 23 24 25 26 0 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 68 67} -defaultsOSRD -pinY DDR 20R -pinY FIXED_IO 60R -pinY USBIND_0 40R -pinY M_AXI_GP0 0R -pinY M_AXI_GP0_ACLK 0L -pinY FCLK_CLK0 100R -pinY FCLK_RESET0_N 80R
+preplace inst proc_sys_reset -pg 1 -lvl 1 -x 240 -y 920 -swap {3 4 0 1 2 5 6 7 8 9} -defaultsOSRD -pinY slowest_sync_clk 60L -pinY ext_reset_in 80L -pinY aux_reset_in 0L -pinY mb_debug_sys_rst 20L -pinY dcm_locked 40L -pinY mb_reset 0R -pinBusY bus_struct_reset 20R -pinBusY peripheral_reset 40R -pinBusY interconnect_aresetn 60R -pinBusY peripheral_aresetn 80R
+preplace inst smartconnect -pg 1 -lvl 2 -x 660 -y 740 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 99 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 39 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 79 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 120 119} -defaultsOSRD -pinY S00_AXI 380L -pinY M00_AXI 420R -pinY M01_AXI 140R -pinY M02_AXI 0R -pinY M03_AXI 280R -pinY aclk 420L -pinY aresetn 400L
+preplace inst axi_bram_ctrl_BRAM_FM32 -pg 1 -lvl 3 -x 1160 -y 1300 -defaultsOSRD -pinY S_AXI 0L -pinY BRAM_PORTA 0R -pinY s_axi_aclk 20L -pinY s_axi_aresetn 40L
+preplace inst axi_bram_ctrl_BRAM_WM32 -pg 1 -lvl 3 -x 1160 -y 860 -defaultsOSRD -pinY S_AXI 0L -pinY BRAM_PORTA 0R -pinY s_axi_aclk 20L -pinY s_axi_aresetn 40L
+preplace inst axi_bram_ctrl_BRAM_CTRL -pg 1 -lvl 3 -x 1160 -y 1020 -defaultsOSRD -pinY S_AXI 0L -pinY BRAM_PORTA 0R -pinY s_axi_aclk 20L -pinY s_axi_aresetn 40L
+preplace inst axi_bram_ctrl_BRAM_OUT -pg 1 -lvl 3 -x 1160 -y 720 -defaultsOSRD -pinY S_AXI 0L -pinY BRAM_PORTA 0R -pinY s_axi_aclk 20L -pinY s_axi_aresetn 40L
+preplace inst BRAM_FM32 -pg 1 -lvl 4 -x 2330 -y 1000 -defaultsOSRD -pinY BRAM_PORTA 0L -pinY BRAM_PORTB 20L -pinY BRAM_PORTB.addrb 40L -pinY BRAM_PORTB.clkb 60L -pinY BRAM_PORTB.dinb 80L -pinY BRAM_PORTB.doutb 100L -pinY BRAM_PORTB.enb 120L -pinY BRAM_PORTB.rstb 140L -pinY BRAM_PORTB.web 160L
+preplace inst BRAM_WM32 -pg 1 -lvl 4 -x 2330 -y 60 -defaultsOSRD -pinY BRAM_PORTA 0L -pinY BRAM_PORTB 20L -pinY BRAM_PORTB.addrb 40L -pinY BRAM_PORTB.clkb 60L -pinY BRAM_PORTB.dinb 80L -pinY BRAM_PORTB.doutb 100L -pinY BRAM_PORTB.enb 120L -pinY BRAM_PORTB.rstb 140L -pinY BRAM_PORTB.web 160L
+preplace inst BRAM_CTRL -pg 1 -lvl 4 -x 2330 -y 440 -defaultsOSRD -pinY BRAM_PORTA 0L -pinY BRAM_PORTB 20L -pinY BRAM_PORTB.addrb 40L -pinY BRAM_PORTB.clkb 60L -pinY BRAM_PORTB.dinb 80L -pinY BRAM_PORTB.doutb 100L -pinY BRAM_PORTB.enb 120L -pinY BRAM_PORTB.rstb 140L -pinY BRAM_PORTB.web 160L
+preplace inst BRAM_OUT -pg 1 -lvl 4 -x 2330 -y 700 -defaultsOSRD -pinY BRAM_PORTA 0L -pinY BRAM_PORTB 20L -pinY BRAM_PORTB.addrb 40L -pinY BRAM_PORTB.clkb 60L -pinY BRAM_PORTB.dinb 80L -pinY BRAM_PORTB.doutb 100L -pinY BRAM_PORTB.enb 120L -pinY BRAM_PORTB.rstb 140L -pinY BRAM_PORTB.web 160L
+preplace inst MM_TOP -pg 1 -lvl 3 -x 1160 -y 100 -swap {1 5 23 24 25 12 27 28 29 2 3 4 0 6 7 8 9 10 11 26 13 14 15 16 17 18 19 20 21 22} -defaultsOSRD -pinY clk 20L -pinY arst_n 40L -pinBusY BRAM_FM32_addr 360R -pinY BRAM_FM32_clk 380R -pinBusY BRAM_FM32_wrdata 400R -pinBusY BRAM_FM32_rddata 60L -pinY BRAM_FM32_en 420R -pinY BRAM_FM32_rst 440R -pinBusY BRAM_FM32_we 460R -pinBusY BRAM_WM32_addr 0R -pinY BRAM_WM32_clk 20R -pinBusY BRAM_WM32_wrdata 40R -pinBusY BRAM_WM32_rddata 0L -pinY BRAM_WM32_en 60R -pinY BRAM_WM32_rst 80R -pinBusY BRAM_WM32_we 100R -pinBusY BRAM_CTRL_addr 120R -pinY BRAM_CTRL_clk 140R -pinBusY BRAM_CTRL_wrdata 160R -pinBusY BRAM_CTRL_rddata 100L -pinY BRAM_CTRL_en 180R -pinY BRAM_CTRL_rst 200R -pinBusY BRAM_CTRL_we 220R -pinBusY BRAM_OUT_addr 240R -pinY BRAM_OUT_clk 260R -pinBusY BRAM_OUT_wrdata 280R -pinBusY BRAM_OUT_rddata 80L -pinY BRAM_OUT_en 300R -pinY BRAM_OUT_rst 320R -pinBusY BRAM_OUT_we 340R
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 40 1060 440
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 860 460 640 820
+preplace netloc vio_0_probe_out0 1 1 2 500 680 840
+preplace netloc MM_TOP_BRAM_FM32_en 1 3 1 1460 520n
+preplace netloc MM_TOP_BRAM_FM32_rst 1 3 1 1420 540n
+preplace netloc MM_TOP_BRAM_FM32_we 1 3 1 1380 560n
+preplace netloc MM_TOP_BRAM_FM32_wrdata 1 3 1 1480 500n
+preplace netloc MM_TOP_BRAM_FM32_clk 1 3 1 1500 480n
+preplace netloc MM_TOP_BRAM_FM32_addr 1 3 1 1540 460n
+preplace netloc BRAM_FM32_doutb 1 2 2 880 1120 1400
+preplace netloc MM_TOP_BRAM_WM32_clk 1 3 1 N 120
+preplace netloc MM_TOP_BRAM_WM32_wrdata 1 3 1 N 140
+preplace netloc MM_TOP_BRAM_WM32_en 1 3 1 1880 160n
+preplace netloc MM_TOP_BRAM_WM32_rst 1 3 1 1860 180n
+preplace netloc MM_TOP_BRAM_WM32_we 1 3 1 1840 200n
+preplace netloc MM_TOP_BRAM_WM32_addr 1 3 1 N 100
+preplace netloc BRAM_WM32_doutb 1 2 2 920 40 1900
+preplace netloc MM_TOP_BRAM_OUT_clk 1 3 1 1680 360n
+preplace netloc MM_TOP_BRAM_OUT_addr 1 3 1 1700 340n
+preplace netloc MM_TOP_BRAM_OUT_wrdata 1 3 1 1640 380n
+preplace netloc MM_TOP_BRAM_OUT_en 1 3 1 1600 400n
+preplace netloc MM_TOP_BRAM_OUT_rst 1 3 1 1580 420n
+preplace netloc MM_TOP_BRAM_OUT_we 1 3 1 1560 440n
+preplace netloc BRAM_OUT_doutb 1 2 2 900 640 1520
+preplace netloc MM_TOP_BRAM_CTRL_addr 1 3 1 1820 220n
+preplace netloc MM_TOP_BRAM_CTRL_clk 1 3 1 1800 240n
+preplace netloc MM_TOP_BRAM_CTRL_wrdata 1 3 1 1780 260n
+preplace netloc BRAM_CTRL_doutb 1 2 2 920 620 1620
+preplace netloc MM_TOP_BRAM_CTRL_en 1 3 1 1760 280n
+preplace netloc MM_TOP_BRAM_CTRL_rst 1 3 1 1740 300n
+preplace netloc MM_TOP_BRAM_CTRL_we 1 3 1 1720 320n
+preplace netloc processing_system7_0_FIXED_IO 1 1 5 480J 1220 860J 960 1880J 940 NJ 940 2490
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 N 1120
+preplace netloc processing_system7_0_DDR 1 1 5 480J 660 NJ 660 1440J 920 NJ 920 2510
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 1880 1000n
+preplace netloc smartconnect_0_M00_AXI 1 2 1 800 1160n
+preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 3 1 1400J 60n
+preplace netloc smartconnect_0_M01_AXI 1 2 1 800 860n
+preplace netloc axi_bram_ctrl_2_BRAM_PORTA 1 3 1 1660J 440n
+preplace netloc axi_bram_ctrl_3_BRAM_PORTA 1 3 1 1620J 700n
+preplace netloc smartconnect_M02_AXI 1 2 1 800 720n
+preplace netloc smartconnect_M03_AXI 1 2 1 N 1020
+levelinfo -pg 1 0 240 660 1160 2330 2470 2560
+pagesize -pg 1 -db -bbox -sgen 0 -110 2680 2290
+",
+   "Reduced Jogs_ScaleFactor":"0.624049",
+   "Reduced Jogs_TopLeft":"2,588",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1960 -y 80 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1960 -y 60 -defaultsOSRD
+preplace inst processing_system7 -pg 1 -lvl 1 -x 190 -y 60 -swap {23 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 27 17 18 19 20 21 22 16 24 25 26 0 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68} -defaultsOSRD
+preplace inst proc_sys_reset -pg 1 -lvl 1 -x 190 -y 350 -swap {1 0 2 3 4 6 7 8 9 5} -defaultsOSRD
+preplace inst smartconnect -pg 1 -lvl 2 -x 580 -y 120 -defaultsOSRD
+preplace inst axi_bram_ctrl_BRAM_FM32 -pg 1 -lvl 3 -x 910 -y -330 -defaultsOSRD
+preplace inst axi_bram_ctrl_BRAM_WM32 -pg 1 -lvl 3 -x 910 -y 0 -defaultsOSRD
+preplace inst axi_bram_ctrl_BRAM_CTRL -pg 1 -lvl 3 -x 910 -y 730 -defaultsOSRD
+preplace inst axi_bram_ctrl_BRAM_OUT -pg 1 -lvl 3 -x 910 -y 340 -defaultsOSRD
+preplace inst BRAM_FM32 -pg 1 -lvl 5 -x 1830 -y -410 -defaultsOSRD
+preplace inst BRAM_WM32 -pg 1 -lvl 5 -x 1830 -y -150 -defaultsOSRD
+preplace inst BRAM_CTRL -pg 1 -lvl 5 -x 1830 -y 300 -defaultsOSRD
+preplace inst BRAM_OUT -pg 1 -lvl 5 -x 1830 -y 750 -defaultsOSRD
+preplace inst MM_TOP -pg 1 -lvl 4 -x 1310 -y 110 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 -10 180 390
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 -20 170 400 0 750 80 1060
+preplace netloc vio_0_probe_out0 1 1 3 430 10 760 90 1070
+preplace netloc MM_TOP_BRAM_FM32_en 1 4 1 1570 -370n
+preplace netloc MM_TOP_BRAM_FM32_rst 1 4 1 1580 -350n
+preplace netloc MM_TOP_BRAM_FM32_we 1 4 1 1590 -330n
+preplace netloc MM_TOP_BRAM_FM32_wrdata 1 4 1 1560 -410n
+preplace netloc MM_TOP_BRAM_FM32_clk 1 4 1 1550 -430n
+preplace netloc MM_TOP_BRAM_FM32_addr 1 4 1 1540 -450n
+preplace netloc BRAM_FM32_doutb 1 3 2 1080 -390 NJ
+preplace netloc MM_TOP_BRAM_WM32_clk 1 4 1 1610 -170n
+preplace netloc MM_TOP_BRAM_WM32_wrdata 1 4 1 1620 -150n
+preplace netloc MM_TOP_BRAM_WM32_en 1 4 1 1630 -110n
+preplace netloc MM_TOP_BRAM_WM32_rst 1 4 1 1640 -90n
+preplace netloc MM_TOP_BRAM_WM32_we 1 4 1 1650 -70n
+preplace netloc MM_TOP_BRAM_WM32_addr 1 4 1 1600 -190n
+preplace netloc BRAM_WM32_doutb 1 3 2 1090 -180 1630J
+preplace netloc MM_TOP_BRAM_OUT_clk 1 4 1 1590 260n
+preplace netloc MM_TOP_BRAM_OUT_addr 1 4 1 1610 240n
+preplace netloc MM_TOP_BRAM_OUT_wrdata 1 4 1 1580 280n
+preplace netloc MM_TOP_BRAM_OUT_en 1 4 1 1560 300n
+preplace netloc MM_TOP_BRAM_OUT_rst 1 4 1 1540 320n
+preplace netloc MM_TOP_BRAM_OUT_we 1 4 1 1530 340n
+preplace netloc BRAM_OUT_doutb 1 3 2 1090 770 N
+preplace netloc MM_TOP_BRAM_CTRL_addr 1 4 1 1670 120n
+preplace netloc MM_TOP_BRAM_CTRL_clk 1 4 1 1650 140n
+preplace netloc MM_TOP_BRAM_CTRL_wrdata 1 4 1 1640 160n
+preplace netloc BRAM_CTRL_doutb 1 3 2 1080 420 1690
+preplace netloc MM_TOP_BRAM_CTRL_en 1 4 1 1630 180n
+preplace netloc MM_TOP_BRAM_CTRL_rst 1 4 1 1620 200n
+preplace netloc MM_TOP_BRAM_CTRL_we 1 4 1 1550 220n
+preplace netloc processing_system7_0_FIXED_IO 1 1 5 440 30 770J 100 1070 400 1660 60 N
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 420 10n
+preplace netloc processing_system7_0_DDR 1 1 5 410 20 740J 110 1060 410 1680 80 N
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 2 1060 -490 N
+preplace netloc smartconnect_0_M00_AXI 1 2 1 720J -350n
+preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 3 2 1060 -230 N
+preplace netloc smartconnect_0_M01_AXI 1 2 1 730J -20n
+preplace netloc axi_bram_ctrl_2_BRAM_PORTA 1 3 2 N 730 1570
+preplace netloc axi_bram_ctrl_3_BRAM_PORTA 1 3 2 1050 670 N
+preplace netloc smartconnect_M02_AXI 1 2 1 740J 130n
+preplace netloc smartconnect_M03_AXI 1 2 1 720J 150n
+levelinfo -pg 1 -40 190 580 910 1310 1830 1960
+pagesize -pg 1 -db -bbox -sgen -40 -970 2080 2760
+"
+}
+{
+   "da_axi4_cnt":"16",
+   "da_board_cnt":"1",
+   "da_bram_cntlr_cnt":"15",
+   "da_clkrst_cnt":"21",
+   "da_ps7_cnt":"2"
+}

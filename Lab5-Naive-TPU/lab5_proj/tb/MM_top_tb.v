@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-`include "E:/workspace/beihang_PE2/rtl/define.v"
+`include "C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/rtl/define.v"
 
 module MM_top_tb();
 
@@ -205,7 +205,7 @@ end
 
 initial begin
     while(1) begin
-        file_FM = $fopen("E:/workspace/beihang_PE2/tb/test1/FM.txt","r");
+        file_FM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/FM.txt","r");
         FM_reg_valid = 1'b0;
         FM_reg0 = 'b0;
         FM_reg1 = 'b0;
@@ -222,7 +222,7 @@ initial begin
         FM_reg1 = 'b0;
         FM_reg2 = 'b0;
         FM_reg3 = 'b0;
-        file_FM = $fopen("E:/workspace/beihang_PE2/tb/test2/FM.txt","r");
+        file_FM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test2/FM.txt","r");
         wait(c_state==WRITE_FM);
         while(!$feof(file_FM)) begin
             @(posedge arm_clk)
@@ -234,7 +234,7 @@ end
 
 initial begin
     while(1) begin
-        file_WM = $fopen("E:/workspace/beihang_PE2/tb/test1/WM.txt","r");
+        file_WM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/WM.txt","r");
         WM_reg_valid = 1'b0;
         WM_reg0 = 'b0;
         WM_reg1 = 'b0;
@@ -251,7 +251,7 @@ initial begin
         WM_reg1 = 'b0;
         WM_reg2 = 'b0;
         WM_reg3 = 'b0;
-        file_WM = $fopen("E:/workspace/beihang_PE2/tb/test2/WM.txt","r");
+        file_WM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test2/WM.txt","r");
         wait(c_state==WRITE_WM);
         while(!$feof(file_WM)) begin
             @(posedge arm_clk)
@@ -263,7 +263,7 @@ end
 
 initial begin
     while(1) begin
-        file_para = $fopen("E:/workspace/beihang_PE2/tb/test1/para.txt","r");
+        file_para = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/para.txt","r");
         wait(c_state==IDLE);
         while(!$feof(file_para)) begin
             line_para = $fscanf(file_para,"%d",M);
@@ -271,7 +271,7 @@ initial begin
             line_para = $fscanf(file_para,"%d",P);
         end
         wait(c_state==FINISH);
-        file_para = $fopen("E:/workspace/beihang_PE2/tb/test2/para.txt","r");
+        file_para = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test2/para.txt","r");
         wait(c_state==IDLE);
         while(!$feof(file_para)) begin
             line_para = $fscanf(file_para,"%d",M);
@@ -283,7 +283,7 @@ initial begin
 end
 
 initial begin
-    fp_w = $fopen("E:/workspace/beihang_PE2/tb/tb_MMout.txt","w");
+    fp_w = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/tb_MMout.txt","w");
 end
 
 initial begin

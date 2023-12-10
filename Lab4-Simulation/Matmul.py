@@ -89,7 +89,7 @@ class Matmul(object):
                 output_arr: shape为output_shape的np.ndarray
         '''
         row, col = output_shape
-        output_arr = self.bram.read(row * col * self.systolic_size, block_name='output', dtype=np.int32).reshape(row, col)
+        output_arr = self.bram.read(row * col * 4, block_name='output', dtype=np.int32).reshape(row, col)
         print('output data: \n', output_arr)
 
         return output_arr

@@ -1,0 +1,24 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../PE.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../PE.srcs/sources_1/bd/design_1/ipshared/2d50/hdl" --include "../../../../PE.srcs/sources_1/bd/design_1/ipshared/1ddd/hdl/verilog" --include "../../../../PE.srcs/sources_1/bd/design_1/ipshared/b2d0/hdl/verilog" --include "C:/Xilinx/Vivado/2019.2/data/xilinx_vip/include" \
+"../../../../PE.srcs/sources_1/ip/out_align_fifo/sim/out_align_fifo.v" \
+"../../../../PE.srcs/sources_1/ip/BRAM_WM_128b/sim/BRAM_WM_128b.v" \
+"../../../../PE.srcs/sources_1/ip/BRAM_FM_64b/sim/BRAM_FM_64b.v" \
+"../../../../PE.srcs/sources_1/ip/tb_ram/sim/tb_ram.v" \
+"../../../../../rtl/Align_fifo.v" \
+"../../../../../rtl/CTRL.v" \
+"../../../../../rtl/FM_reshape.v" \
+"../../../../../rtl/Input_align.v" \
+"../../../../../rtl/MAC.v" \
+"../../../../../rtl/MM_top.v" \
+"../../../../../rtl/Multiply_8x8.v" \
+"../../../../../rtl/Multiply_ctrl.v" \
+"../../../../../rtl/Out_ctrl.v" \
+"../../../../../rtl/WM_reshape.v" \
+"../../../../../rtl/arstn2rst.v" \
+"../../../../../tb/MM_top_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

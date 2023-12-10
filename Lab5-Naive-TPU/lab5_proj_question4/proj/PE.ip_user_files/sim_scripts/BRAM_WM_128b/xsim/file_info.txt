@@ -1,0 +1,2 @@
+BRAM_WM_128b.v,verilog,xil_defaultlib,../../../../PE.srcs/sources_1/ip/BRAM_WM_128b/sim/BRAM_WM_128b.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

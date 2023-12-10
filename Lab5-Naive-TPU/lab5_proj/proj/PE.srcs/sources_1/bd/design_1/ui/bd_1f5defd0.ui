@@ -158,19 +158,19 @@ preplace netloc MM_TOP_BRAM_CTRL_we 1 3 1 880 870n
 preplace netloc processing_system7_0_DDR 1 1 7 130J 60 NJ 60 NJ 60 NJ 60 NJ 60 NJ 60 N
 preplace netloc processing_system7_0_FIXED_IO 1 1 7 150J 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 N
 preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 3 1 1140J 400n
-preplace netloc axi_bram_ctrl_2_BRAM_PORTA 1 3 1 1260J 920n
 preplace netloc axi_bram_ctrl_3_BRAM_PORTA 1 3 1 1240J 660n
 preplace netloc smartconnect_0_M00_AXI 1 2 1 480J 970n
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 190 980n
 preplace netloc smartconnect_M02_AXI 1 2 1 480 1040n
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 1020J 140n
+preplace netloc axi_bram_ctrl_2_BRAM_PORTA 1 3 1 1260J 920n
 preplace netloc smartconnect_0_M01_AXI 1 2 1 500J 1000n
 preplace netloc smartconnect_M03_AXI 1 2 1 520 1020n
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 1020J 140n
 levelinfo -pg 1 -230 -40 350 730 1370 1490 2240 2360 2400
 pagesize -pg 1 -db -bbox -sgen -230 0 2510 2420
 ",
    "No Loops_ScaleFactor":"0.544095",
-   "No Loops_TopLeft":"-230,40",
+   "No Loops_TopLeft":"-230,-191",
    "Reduced Jogs_ExpandedHierarchyInLayout":"",
    "Reduced Jogs_Layers":"/bridge_0_ot_clk:true|/bridge_0_w0_rst:true|/bridge_0_com_clk:true|/bridge_0_f1_clk:true|/proc_sys_reset_0_peripheral_aresetn:true|/bridge_0_ot_rst:true|/bridge_0_f0_rst:true|/processing_system7_0_FCLK_CLK0:true|/bridge_0_w1_rst:true|/bridge_0_f0_clk:true|/bridge_0_w1_clk:true|/bridge_0_f1_rst:true|/bridge_0_w0_clk:true|/processing_system7_0_FCLK_RESET0_N:true|/bridge_0_com_rst:true|/axi_bram_ctrl_com_bram_clk_a:true|/axi_bram_ctrl_com_bram_rst_a:true|",
    "Reduced Jogs_Layout":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS-threadsafe
