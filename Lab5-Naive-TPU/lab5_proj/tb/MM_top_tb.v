@@ -151,7 +151,8 @@ always @(*) begin
             n_state = c_state;
     end
     FINISH: begin
-        n_state = IDLE;
+        // n_state = IDLE;
+        n_state = finish_sig ? IDLE : FINISH;
     end
     default: n_state = IDLE;
     endcase
@@ -212,46 +213,44 @@ end
 reg[0:7] feature[0:200][0:200];
 reg[0:7] weight[0:200][0:200];
 reg signed [0:31] std_result;
-reg signed [0:31] sim_result[0:40000];
+reg [0:31] sim_result[0:40000];
 reg flag;
 
-integer i, j, k;
+integer i, j, k, r;
+
+reg finish_sig;
 
 initial begin
     while(1) begin
         // file_FM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/FM.txt","r");
-        FM_reg_valid = 1'b0;
-        FM_reg0 = 'b0;
-        FM_reg1 = 'b0;
-        FM_reg2 = 'b0;
-        FM_reg3 = 'b0;
         wait(c_state==WRITE_FM);
         // while(!$feof(file_FM)) begin
         //     @(posedge arm_clk)
         //     FM_reg_valid = 1'b1;
         //     line_FM = $fscanf(file_FM,"%d,%d,%d,%d,",FM_reg0,FM_reg1,FM_reg2,FM_reg3);
         // end
-        for (j = 0; j < N; j = j + 1) begin
-            for (i = 0; i < M; i = i + 4) begin
+        for(j = 0; j < N; j = j + 1) begin
+            for(i = 0; i < M; i =i + 4) begin
                 @(posedge arm_clk)
                 FM_reg_valid = 1'b1;
                 {FM_reg0, FM_reg1, FM_reg2, FM_reg3} = $random;
+                if(i + 1 >= M) begin
+                    FM_reg1 = 0;
+                    FM_reg2 = 0;
+                    FM_reg3 = 0;
+                end 
+                else if(i + 2 >= M) begin
+                    FM_reg2 = 0;
+                    FM_reg3 = 0;
+                end 
+                else if(i + 3 >= M) begin
+                    FM_reg3 = 0;
+                end
+                
                 feature[i][j] = FM_reg0;
-                if (i + 1 < M) begin
-                    feature[i + 1][j] = FM_reg1;
-                end else begin
-                    feature[i + 1][j] = 'b0;
-                end
-                if (i + 2 < M) begin
-                    feature[i + 2][j] = FM_reg2;
-                end else begin
-                    feature[i + 2][j] = 'b0;
-                end
-                if (i + 3 < M) begin
-                    feature[i + 3][j] = FM_reg3;
-                end else begin
-                    feature[i + 3][j] = 'b0;
-                end
+                feature[i + 1][j] = FM_reg1;
+                feature[i + 2][j] = FM_reg2;
+                feature[i + 3][j] = FM_reg3;
             end
         end
         // FM_reg_valid = 1'b0;
@@ -272,40 +271,35 @@ end
 initial begin
     while (1) begin
         // file_WM = $fopen("C:/Architecture/Intelligent-Architecture/Lab5-Naive-TPU/lab5_proj/tb/test1/WM.txt","r");
-        WM_reg_valid = 1'b0;
-        WM_reg0 = 'b0;
-        WM_reg1 = 'b0;
-        WM_reg2 = 'b0;
-        WM_reg3 = 'b0;
         wait(c_state==WRITE_WM);
         // while(!$feof(file_WM)) begin
         //     @(posedge arm_clk)
         //     WM_reg_valid = 1'b1;
         //     line_WM = $fscanf(file_WM,"%d,%d,%d,%d,",WM_reg0,WM_reg1,WM_reg2,WM_reg3);
         // end
-        for (i = 0; i < N; i = i + 1) begin
-            for (j = 0; j < P; j = j + 4) begin
+        for(i = 0; i < N; i = i + 1) begin
+            for(j = 0; j < P; j = j + 4) begin
                 @(posedge arm_clk)
                 WM_reg_valid = 1'b1;
                 {WM_reg0, WM_reg1, WM_reg2, WM_reg3} = $random;
+
+                if(j + 1 >= M) begin
+                    WM_reg1 = 0;
+                    WM_reg2 = 0;
+                    WM_reg3 = 0;
+                end else if(j + 2 >= M) begin
+                    WM_reg2 = 0;
+                    WM_reg3 = 0;
+                end else if(j + 2 >= M) begin
+                    WM_reg3 = 0;
+                end
                 weight[i][j] = WM_reg0;
-                if (j + 1 < P) begin
-                    weight[i][j + 1] = WM_reg1;
-                end else begin
-                    weight[i][j + 1] = 'b0;
-                end
-                if (j + 2 < P) begin
-                    weight[i][j + 2] = WM_reg2;
-                end else begin
-                    weight[i][j + 2] = 'b0;
-                end
-                if (j + 3 < P) begin
-                    weight[i][j + 3] = WM_reg3;
-                end else begin
-                    weight[i][j + 3] = 'b0;
-                end
+                weight[i][j+1] = WM_reg1;
+                weight[i][j+2] = WM_reg2;
+                weight[i][j+3] = WM_reg3;
             end
         end
+        r = 0;
         // WM_reg_valid = 1'b0;
         // WM_reg0 = 'b0;
         // WM_reg1 = 'b0;
@@ -320,6 +314,9 @@ initial begin
         // end
     end
 end
+
+reg signed [0:31] cur_res_A;
+reg signed [0:31] cur_res_B;
 
 initial begin
     while (1) begin
@@ -343,16 +340,31 @@ initial begin
         //     line_para = $fscanf(file_para,"%d",P);
         // end
         // wait(c_state==FINISH);
+       
+        FM_reg_valid = 1'b0;
+        FM_reg0 = 'b0;
+        FM_reg1 = 'b0;
+        FM_reg2 = 'b0;
+        FM_reg3 = 'b0;
+        WM_reg_valid = 1'b0;
+        WM_reg0 = 'b0;
+        WM_reg1 = 'b0;
+        WM_reg2 = 'b0;
+        WM_reg3 = 'b0;
+        finish_sig = 1'b0;
         wait(c_state==FINISH);
+        wait(r == M * P)
         arm_work = 1'b0;
         flag = 1'b1;
         for (i = 0; i < M && flag; i = i + 1) begin
             for (j = 0; j < P && flag; j = j + 1) begin
-                // @(posedge arm_clk)
+                //@(posedge arm_clk)
                 std_result = 'b0;
                 for (k = 0; k < N; k = k + 1) begin
                     std_result = std_result + $signed({8'b0,feature[i][k]}) * $signed(weight[k][j]);
                 end
+                cur_res_A = std_result;
+                cur_res_B = sim_result[i * P + j];
                 if (std_result != sim_result[i * P + j]) begin
                     $display("Error: %d  !=  %d", std_result, sim_result[i * P + j]);
                     flag = 1'b0;
@@ -363,6 +375,7 @@ initial begin
             $display("~ Pass test ~");
         end
         arm_work = 1'b1;
+        finish_sig = 1;
     end
 end
 
@@ -531,7 +544,9 @@ end
 always @(posedge arm_clk) begin
     if (c_state_f3==READ_OUT) begin
         // $fwrite(fp_w,"%d\n",$signed(arm_BRAM_OUT_douta));
-        sim_result[cnt_f3] = $signed(arm_BRAM_OUT_douta);
+        // sim_result[cnt_f3] = $signed(arm_BRAM_OUT_douta);
+        sim_result[r] = arm_BRAM_OUT_douta;
+		r = r + 1;
     end
 end
 
