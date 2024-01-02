@@ -7,7 +7,6 @@ sys.path.append(os.path.abspath('.'))   # 添加路径信息否则无法引用�
 
 from tools import *
 
-# [TODO] 替换此处代码为Lab4、Lab5中同学们自己实现的类
 class Matmul(object):
     '''矩阵乘法
         Args: uint8, (m, n)
@@ -16,12 +15,23 @@ class Matmul(object):
 
     def __init__(self):
         self.systolic_size = 4 # 脉动阵列大小
-        pass
+        self.bram = BRAM()
 
     def __call__(self, input: np.uint8, weight: np.int8):
+        # print('~~~ send data ~~~')
         self.send_data(input, 'input')
         self.send_data(weight, 'weight')
-        output_arr = self.recv_output((None, None))
+
+        m, n = input.shape
+        n, p = weight.shape
+        # print('~~~ send instr ~~~')
+        self.send_instr(m, p, n)
+        self.send_flag()
+        self.wait_flag()
+
+        # print('~~~ recv output ~~~')
+        output_arr = self.recv_output((m, p))
+
         return output_arr
 
     def send_data(self, data, block_name, offset='default'):
@@ -37,18 +47,40 @@ class Matmul(object):
                 block_name: input, weight
                 offset: 偏移地址名称，默认为default
         '''
-        pass
+        if block_name == 'input':
+            data = self._zero_padding(data, axis=0).T
+            # print('input data: \n', data)
+        elif block_name == 'weight':
+            data = self._zero_padding(data, axis=1)
+            # print('weight data: \n', data)
+        else:
+            raise ValueError('block_name must be input or weight')
+        
+        self.bram.write(data, block_name=block_name, offset=offset)
 
     def send_instr(self, m, p, n):
         '''构建并发送指令
 
             两个矩阵shape分别为(m,n) x (n,p)
         '''
-        pass
+        # 63:48  47:32  31:16  15:0
+        #  null      N      P     M
+        # little end, unsigned
+        ir = 0
+        ir <<= 16
+        ir += n
+        ir <<= 16
+        ir += p
+        ir <<= 16
+        ir += m
+        instr = ir.to_bytes(8, byteorder='little', signed=False)
+        # print('instr: \n', instr)
+        self.bram.write(instr, block_name='ir', offset='instr')
 
     def send_flag(self):
         '''发送flag=1信号'''
-        pass
+        flag = b"\x01\x00\x00\x00"
+        self.bram.write(flag, 'ir', offset='flag')
         
     def recv_output(self, output_shape: tuple):
         '''接收结果
@@ -59,8 +91,43 @@ class Matmul(object):
             Return:
                 output_arr: shape为output_shape的np.ndarray
         '''
-        output_arr = None
+        row, col = output_shape
+        output_arr = self.bram.read(row * col * 4, block_name='output', dtype=np.int32).reshape(row, col)
+        # print('output data: \n', output_arr)
+
         return output_arr
+    
+    def _zero_padding(self, data, axis=0):
+        '''补零函数
+
+            Args:
+                data: 要补零的数据
+                axis: 补零的方向，0为行方向，1为列方向
+
+            Return:
+                补零后的数据
+        '''
+        if axis == 0:
+            if data.shape[0] % self.systolic_size != 0:
+                data = np.vstack((data, np.zeros((self.systolic_size - data.shape[0] % self.systolic_size, data.shape[1]), dtype=data.dtype)))
+        elif axis == 1:
+            if data.shape[1] % self.systolic_size != 0:
+                data = np.hstack((data, np.zeros((data.shape[0], self.systolic_size - data.shape[1] % self.systolic_size), dtype=data.dtype)))
+        else:
+            raise ValueError('axis must be 0 or 1')
+        
+        return data
+        
+    def read_flag(self):
+        '''读取flag信号'''
+        flag = self.bram.read(1, block_name='ir', offset='flag')
+        return flag
+    
+    def wait_flag(self):
+        '''等待flag=1信号'''
+        value = 1
+        while value != 0:
+            value = self.read_flag()[0]
 
 class ReLU(object):
     '''relu激活函数'''

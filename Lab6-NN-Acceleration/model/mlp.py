@@ -34,17 +34,35 @@ class MLPNumpy(object):
 
         # [TODO] 实现网络各个层的定义
         # 例：
-        self.dense = Dense(
+        # self.dense = Dense(
+        #     self.w1,
+        #     self.b1,
+        #     self.dense1_quantization_params,
+        #     matmul=self.matmul
+        # )
+
+        self.dense1 = Dense(
             self.w1,
             self.b1,
             self.dense1_quantization_params,
             matmul=self.matmul
         )
 
+        self.dense2 = Dense(
+            self.w2,
+            self.b2,
+            self.dense2_quantization_params,
+            matmul=self.matmul
+        )
+
     def forward(self, x):
         # [TODO] 使用定义后的网络层算子实现网络前向传播
         # 例：
-        output = self.dense(x)
+        # output = self.dense(x)
+
+        x = self.dense1(x)
+        output = self.dense2(x)
+
         return output
 
     def __call__(self, x):

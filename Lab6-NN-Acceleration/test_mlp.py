@@ -26,8 +26,8 @@ x_test = x_test.round().astype(np.int8)
 x_test = x_test.reshape(x_test.shape[0], -1)
 
 ##################### 创建实例 ##################### 
-# net = mlp.MLPNumpy('np')
-net = mlp.MLPNumpy('Matmul')
+net = mlp.MLPNumpy('np')
+# net = mlp.MLPNumpy('Matmul')
 timer = Timer()
 
 ##################### 测试模型 ##################### 
